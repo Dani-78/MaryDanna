@@ -23,7 +23,7 @@
 <meta name="author" content="Danna De la Hoz y Mary Silva" />
 
 
-<meta name="date" content="2026-08-19" />
+<meta name="date" content="2026-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -368,6 +368,7 @@ Los diagramas de cajas permiten observar el rango y la concentración de los val
 </div>
 <div id="resumen" class="section level3 hasAnchor" number="3.2.4">
 <h3><span class="header-section-number">3.2.4</span> Resumen<a href="univariado.html#resumen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Antes de pasar al análisis de las variables categóricas, hagamos un resumen de las variables numéricas ya vistas en una tabla de frecuencias:</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="univariado.html#cb11-1" tabindex="-1"></a>resumen_numericas <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb11-2"><a href="univariado.html#cb11-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric), <span class="sc">-</span>median_house_value) <span class="sc">%&gt;%</span></span>
 <span id="cb11-3"><a href="univariado.html#cb11-3" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
@@ -401,6 +402,7 @@ Los diagramas de cajas permiten observar el rango y la concentración de los val
 ## 6 populati… 20640 1425.   1.13e3 1166       3     35682    787    1725    9.38e2
 ## 7 total_be… 20433  538.   4.21e2  435       1      6445    296     647    3.51e2
 ## 8 total_ro… 20640 2636.   2.18e3 2127       2     39320   1448.   3148    1.70e3</code></pre>
+<p>La tabla resume los estadísticos descriptivos para las 8 variables numéricas del conjunto de datos. En variables como <code>households</code>, <code>population</code>, <code>total_rooms</code> y <code>total_bedrooms</code>, se observa una marcada asimetría positiva con amplia dispersión, con medias superiores a sus medianas y máximos muy distantes. Por su parte, <code>housing_median_age</code> y <code>median_income</code> muestran distribuciones más moderadas. Mientras que las variables geográficas (<code>latitude</code> y <code>longitude</code>) están en el rango definido que delimita la región.</p>
 </div>
 </div>
 <div id="variables-categóricas" class="section level2 hasAnchor" number="3.3">

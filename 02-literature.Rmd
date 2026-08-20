@@ -1,0 +1,85 @@
+# Preparación de los datos {#preparacion}
+
+Antes de realizar el análisis exploratorio, es necesario conocer la estructura del conjunto de datos y comprobar que la información se haya cargado correctamente.
+
+## Librerías utilizadas
+
+Para el análisis se utilizarán diferentes paquetes de R que facilitan tanto la manipulación de los datos como su representación gráfica y el cálculo de medidas estadísticas.
+
+```{r LIBRERIA, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(Amelia)
+library(moments)
+library(patchwork)
+library(GGally)
+```
+
+## Carga del conjunto de datos
+
+El conjunto de datos se encuentra almacenado en un archivo .csv disponible en un repositorio de GitHub. Se utiliza su URL para importarlo a R.
+
+Una vez realizada la importación, se asigna el conjunto de datos al objeto datos, que será utilizado como punto de partida para el análisis.
+
+```{r data}
+url <- "https://raw.githubusercontent.com/cdeoroaguado/Datos/main/dataml/housing.csv"
+datos <- read.csv(url)
+```
+
+
+
+Verifiquemos que los datos se cargaron correctamente observando las variables y sus primeras cinco filas:
+```{r encabezado}
+head(datos,n=5)
+```
+
+Las dimensiones, los nombres de las columnas y la estructura de la base de datos se obtienen con los siguientes códigos, respectivamente:
+
+```{r dimensiones}
+dim(datos)
+```
+
+```{r nombre columnas}
+colnames(datos)
+```
+
+```{r estructura}
+str(datos)
+```
+
+## Tratamiento de valores ausentes
+
+En esta etapa también se debee revisar si existen valores faltantes, ya que estos pueden afectar los cálculos y las observaciones.
+
+Para identificar estos valores se cuenta la cantidad de NA presente por columna:
+
+```{r valores NA}
+df <- datos
+
+df %>%
+    summarise(across(everything(), ~ sum(is.na(.)), .names = "NA_{.col}"))
+```
+
+Otra forma de hacerlo es:
+```{r}
+missmap(df)
+```
+
+
+En las variables numéricas que contienen valores faltantes, se utilizará la media de la variable para llenar las ausencias:
+
+```{r llenar NA promedio}
+df <- df %>%
+  mutate(
+    across(
+      where(is.numeric),
+      ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)
+    )
+  )
+```
+
+Verifiquemos si fueron llenados con el promedio:
+```{r verificar NA promedio}
+df %>%
+  summarise(across(everything(), ~ sum(is.na(.)), .names = "NA_{.col}"))
+```
+Ya que se ha confirmado que no quedan valores NA, el conjunto de datos está preparado para continuar con el análisis exploratorio.

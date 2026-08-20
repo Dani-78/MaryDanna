@@ -1,0 +1,290 @@
+# Análisis exploratorio univariado {#univariado}
+
+
+```{r LIBRERIA_univar, include = FALSE}
+library(tidyverse)
+library(Amelia)
+library(moments)
+library(patchwork)
+library(GGally)
+```
+
+```{r, include = FALSE}
+url <- "https://raw.githubusercontent.com/cdeoroaguado/Datos/main/dataml/housing.csv"
+df <- read.csv(url)
+```
+
+
+
+
+Con el análisis univariado se estudia cada variable de manera individual para conocer su distribución, valores centrales, valores atípicos y características como la dispersión y la asimetría 
+
+
+## Variable Objetivo: Valor medio de las viviendas
+En primer lugar, se analiza  la variable objetivo `median_house_value`, la cual representa el valor medio de las viviendas en cada zona censal.
+
+### Medidas estadísticas
+
+Calculemos algunas medidas estadísticas para resumir su comportamiento.
+
+```{r median_house}
+df %>% summarise (n = length(median_house_value),
+                  media = mean(median_house_value),
+                  sd = sd(median_house_value),
+                  mediana = median(median_house_value),
+                  RIC = IQR(median_house_value),
+                  Q1 = quantile(median_house_value,0.25),
+                  Q3 = quantile(median_house_value,0.75),
+                  minimo = min(median_house_value),
+                  maximo = max(median_house_value),
+                  curtosis = kurtosis(median_house_value),
+                  asimetria = skewness(median_house_value))
+```
+El conjunto cuenta con 20.640 observaciones. El valor medio de las viviendas es de 206.856 USD, mientras que la mediana es de 179.700 USD. Esta diferencia, junto con una asimetría de 0,98, indica que la distribución presenta un sesgo hacia valores altos. El 50 % central de las viviendas se encuentra entre 119.600 y 264.725 USD, mostrando una dispersión considerable. Además, los valores van desde 14.999 hasta 500.001 USD.
+
+En general, median_house_value presenta alta variabilidad y una distribución moderadamente sesgada hacia la derecha.
+
+### Histograma
+
+Ahora, para observar directamente la distribución, se utiliza un histograma acompañado de una curva de densidad.
+
+```{r histhousevalue}
+df %>%
+  ggplot(aes(x = median_house_value)) +
+  geom_histogram(aes(y = after_stat(density)), 
+                 binwidth = 25000, 
+                 fill = "#F598C4", 
+                 color = "white", 
+                 alpha = 0.6) +
+  geom_density(color = "#3D9970", linewidth = 1.2) +
+  labs(
+    title = "Distribucion del valor medio de las viviendas",
+    x = "Valor medio de la vivienda (USD)",
+    y = "Densidad"
+  ) +
+  theme_bw()
+```
+Se observa que la distribución se concentra principalmente entre 100.000 y 250.000 USD, con un pico alrededor de 150.000–175.000 USD. A partir de este rango, la frecuencia disminuye progresivamente,lo que indica asimetría positiva. También se observa una concentración importante de valores cerca de 500.000 USD, relacionada con el límite superior de los datos.
+
+El histograma confirma que los valores de las viviendas presentan una distribución asimétrica y una variabilidad considerable.
+
+### Diagrama de cajas y bigotes
+
+Para complementar el histograma, se utiliza un diagrama de cajas y bigotes. Este permite visualizar la mediana, los cuartiles y los posibles valores atípicos.
+
+```{r boxplotvaluehouse}
+df %>%
+  ggplot(aes(x = "", y = median_house_value)) +
+  geom_boxplot(fill = "lightblue", color = "darkblue", outlier.color = "darkred") +
+  stat_summary(
+    fun = mean,
+    geom = "point",
+    shape = 20,
+    size = 3,
+    color = "black"
+  ) +
+  labs(
+    title = "Diagrama de cajas y bigotes del valor medio de las viviendas",
+    x = "",
+    y = "Valor medio de la vivienda (USD)"
+  ) +
+  theme_bw()
+```
+El diagrama muestra que la mediana del valor de las viviendas se encuentra alrededor de 179.700 USD, mientras que el 50 % central de los datos se concentra aproximadamente entre 119.600 y 264.725 USD.
+
+Se observan varios valores atípicos en la parte superior, cercanos a los 500.000 USD de viviendas con valores considerablemente mayores al resto. Además, la posición de la media por encima de la mediana se explica por la asimetría positiva. Es decir, hay alta dispersión y sesgo hacia valores altos.
+
+
+## Variables Numéricas
+
+Ya estudiada la variable objetivo, se analiza individualmente cada una de las demás variables del conjunto de datos antes de analizar las relaciones entre ellas. Empezemos con las variables numéricas.
+
+### Población, Hogares e Ingresos
+
+Para conocer algunas características demográficas y socioeconómicas, se analizan las variables `population` , `households` y `median_income`. La variable `population` representa la cantidad de personas que habitan en cada zona, `households` indica el número de hogares registrados y `median_income` corresponde al ingreso medio de los hogares.
+
+Representémoslas por medio de diagramas de cajas y bigotes:
+
+```{r}
+
+G_population <- df %>% 
+  ggplot(aes(x = "", y = population))+
+  geom_boxplot(fill = "grey", alpha = 0.7)+
+  labs(x = "", y = "Poblacion")+
+  theme_bw()
+  
+```
+
+```{r}
+G_households <- df %>% 
+  ggplot(aes(x = "", y = households)) +
+  geom_boxplot(fill = "brown", alpha = 0.5) +
+  labs(x = "", y = "Numero de hogares de la zona")
+
+```
+
+```{r}
+G_income <- df %>% 
+  ggplot(aes(x = "", y = median_income)) +
+  geom_boxplot(fill = "green", alpha = 0.7) +
+  labs(x = "", y = "Ingreso medio de los hogares (decenas de miles de USD)")
+
+G_population + G_households + G_income
+```
+
+En las variables `population` y `households` se observa una alta concentración de valores bajos y medios, así como numerosos valores atípicos en la parte superior. Por su parte, `median_income` presenta una distribución más concentrada, pero también se observan varios valores atípicos superiores.
+
+En general, los tres diagramas muestran asimetría positiva debido a los datos atípicos. Es decir, la mayoría de las zonas presentan una población, número de hogares e ingresos moderados, pero algunas alcanzan valores considerablemente mayores.
+
+### Antiguedad, Habitaciones y Dormitorios
+
+Para complementar, se analizan las variables `housing_median_age`, `total_rooms` y `total_bedrooms`. Estas representan la antigüedad de las viviendad, el número de habitaciones y el número de dormitorios respectivamente. Lo que caracterizar las viviendas según sus condiciones y su tamaño.
+
+A continuación, los diagramas de caja y bigotes:
+
+```{r}
+library(patchwork)
+
+# Boxplot de housing_median_age
+p1 <- df %>%
+  ggplot(aes(x = "", y = housing_median_age)) +
+  geom_boxplot(fill = "#1f77b4", alpha = 0.7) +
+  labs(
+    title = "Antigüedad media de las viviendas",
+    y = "Años",
+    x = ""
+  ) +
+  theme_bw()
+
+# Boxplot de total_rooms
+p2 <- df %>%
+  ggplot(aes(x = "", y = total_rooms)) +
+  geom_boxplot(fill = "#2ca02c", alpha = 0.7) +
+  labs(
+    title = "Número total de habitaciones",
+    y = "Habitaciones",
+    x = ""
+  ) +
+  theme_bw()
+
+# Boxplot de total_bedrooms
+p3 <- df %>%
+  ggplot(aes(x = "", y = total_bedrooms)) +
+  geom_boxplot(fill = "#d62728", alpha = 0.7) +
+  labs(
+    title = "Número total de dormitorios",
+    y = "Dormitorios",
+    x = ""
+  ) +
+  theme_bw()
+
+# Primera fila
+p1 + p2 + p3 
+```
+
+La variable `housing_median_age` presenta una distribución más equilibrada que las variables relacionadas con el número de habitaciones. La mayor parte de las zonas tiene una antigüedad media entre 18 y 37 años, con una mediana cercana a los 29 años, sin datos particularmente atípicos.
+
+Por otro lado, tanto `total_rooms` como `total_bedrooms` presentan una marcada asimetría positiva. La mayoría de las observaciones se concentra en valores relativamente bajos, mientras que existen muchos valores atípicos superiores. Esto indica que algunas zonas cuentan con una cantidad de habitaciones considerablemente mayor que la mayoría.
+
+También se observa que las dos variables tienen un comportamiento similar, lo que sugiere una relación, ya que las viviendas con un mayor número total de habitaciones suelen tener también más dormitorios.
+
+
+### Coordenadas geográficas
+
+Las variables `latitude` y `longitude` permiten identificar la ubicación geográfica de cada zona del conjunto de datos. Esta ubicación puede estar relacionada con otras condiciones de la zona y, posteriormente, con el valor de las viviendas.
+
+```{r long&lat}
+G_long <- df %>% 
+  ggplot(aes(x="", y=longitude))+
+  geom_boxplot(fill="orange", alpha=0.7)+
+  labs(x="", y="Longitud geografica")
+  
+ G_lat <- df %>% 
+  ggplot(aes(x="", y=latitude))+
+  geom_boxplot(fill="purple", alpha=0.7)+
+  labs(x="", y="Latitud geografica")
+
+ G_long + G_lat
+```
+Los diagramas de cajas permiten observar el rango y la concentración de los valores de latitud y longitud. Aunque a diferencia de otras variables del conjunto, como las coordenadas representan posiciones geográficas, sus valores deben interpretarse como ubicaciones y no como cantidades que puedan considerarse altas o bajas.
+
+Ambas variables muestran una dispersión similar con asimetrías opuestas. La longitud es asimétrica negativamente (hacia el este) y la latitud lo es positivamente (hacia el sur), lo que sugiere que las viviendas se concentran en el sureste de California.
+
+### Resumen
+
+Antes de pasar al análisis de las variables categóricas, hagamos un resumen de las variables numéricas ya vistas en una tabla de frecuencias:
+
+```{r}
+resumen_numericas <- df %>%
+  select(where(is.numeric), -median_house_value) %>%
+  pivot_longer(
+    cols = everything(),
+    names_to = "variable",
+    values_to = "valor"
+  ) %>%
+  group_by(variable) %>%
+  summarise(
+    n = sum(!is.na(valor)),
+    media = mean(valor, na.rm = TRUE),
+    ds = sd(valor, na.rm = TRUE),
+    mediana = median(valor, na.rm = TRUE),
+    minimo = min(valor, na.rm = TRUE),
+    maximo = max(valor, na.rm = TRUE),
+    Q1 = quantile(valor, 0.25, na.rm = TRUE),
+    Q3 = quantile(valor, 0.75, na.rm = TRUE),
+    IQR = IQR(valor, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+resumen_numericas
+```
+La tabla resume los estadísticos descriptivos para las 8 variables numéricas del conjunto de datos. En variables como `households`, `population`, `total_rooms` y `total_bedrooms`, se observa una marcada asimetría positiva con amplia dispersión, con medias superiores a sus medianas y máximos muy distantes. Por su parte, `housing_median_age` y `median_income` muestran distribuciones más moderadas. Mientras que las variables geográficas (`latitude` y `longitude`) están en el rango definido que delimita la región.
+
+## Variables Categóricas
+
+Ya que analizamos las variables numéricas, continuemos con las categóricas.
+
+### Proximidad al océano
+
+En este caso la única variable categórica es `ocean_proximity`, la cual clasifica las zonas censadas según su proximidad al océano en:
+
+- A menos de una hora del océano
+- Interior / Zona continental
+- En una isla
+- Cerca de la bahía
+- Cerca del océano
+
+Veamos una tabla de frecuencias:
+
+```{r variableoceano}
+df %>%
+  count(ocean_proximity, name = "n") %>%
+  mutate(Porcentaje = round((n/sum(n))*100,2),
+         Variable = 'ocean_proximity',
+         Categoria = as.character(ocean_proximity)) %>% select(Variable,Categoria,n,Porcentaje) -> tabla_ocean
+
+tabla_ocean
+```
+
+Asimismo, representamos en un gráfico de barras:
+
+```{r oceangrafico}
+df %>%
+    count(ocean_proximity, name = "Frecuencia") %>%
+  mutate(
+    Porcentaje = round(Frecuencia / sum(Frecuencia) * 100, 1),
+    Etiqueta = paste0(Frecuencia, " (", Porcentaje, "%)")) -> tabla_ocean_b
+tabla_ocean_b %>%
+  ggplot(aes(x = reorder(ocean_proximity, -Frecuencia), y = Frecuencia))+
+  geom_col(fill = "#008B8B", width = 0.6)+
+  geom_text(aes(label = Etiqueta), vjust=-0.5, size=4.5)+
+   labs(x = "Proximidad al oceano", y = "Frecuencia (Porcentaje)") +
+  facet_wrap(~'Distribucion de la variable ocean proximity')+
+  scale_y_continuous(expand = expansion(mult=c(0,0.15)))+
+  theme_bw()
+  
+```
+
+En las anteriores representaciones se logra ver que la variable `ocean_proximity` muestra una clara concentración en dos categorías principales que abarcan más del 76% de la muestra: las viviendas ubicadas a menos de una hora del océano (44.26%) y las situadas en el interior o zona continental).
+
+Por su parte, las categorías cerca al océano y cerca a la bahía registran proporciones moderadas y bastante parecidas entre sí, entre el 11% y el 13%. Finalmente, la categoría de viviendas en islas resulta estadísticamente insignificante, representando apenas el 0.02% de las viviendas.

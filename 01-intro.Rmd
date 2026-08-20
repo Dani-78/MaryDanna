@@ -1,0 +1,42 @@
+# Introducción {#intro}
+
+## Contexto del análisis
+
+El valor de una vivienda no depende de una única característica. Factores como la ubicación, el nivel de ingresos de la población, la antigüedad de las viviendas y las características de cada zona pueden estar relacionadas con las diferencias observadas en los precios.
+
+Para estudiar estas relaciones utilizaremos el conjunto de datos **California Housing**, que reúne información de distintas viviendas del estado de California. Cada observación representa una zona y contiene variables que permiten describir tanto sus características demográficas como algunas condiciones económicas y geográficas.
+
+## Objetivo
+
+El propósito de este trabajo es realizar un **análisis exploratorio de los datos (EDA)** que permita conocer las principales características del conjunto de datos y explorar posibles relaciones entre sus variables, especialmente su relación con la variable de interés `median_house_value`, que corresponde al valor medio de las viviendas de cada zona.
+
+En particular, se busca:
+
+- Describir estadísticamente las variables disponibles
+- Examinar la distribución del valor medio de las viviendas;
+- Identificar la presencia de valores ausentes y realizar un tratamiento de estos;
+- Analizar la distribución de las viviendas según su proximidad al océano;
+- Explorar la relación entre `median_house_value` y diferentes variables numéricas y categóricas;
+- Identificar patrones, tendencias y posibles valores atípicos que puedan ser relevantes para un análisis posterior.
+
+De esta manera, el análisis exploratorio permite obtener una primera visión del comportamiento de los datos y establecer una base para posibles análisis estadísticos o modelos de regresión posteriores.
+
+## Descripción de las variables
+
+El conjunto de datos contiene diez variables:
+
+| Variable | Descripción |
+|:--|:--|
+| `longitude` | Longitud geográfica de la zona. |
+| `latitude` | Latitud geográfica de la zona. |
+| `housing_median_age` | Edad media de las viviendas de la zona. |
+| `total_rooms` | Número total de habitaciones registradas en la zona. |
+| `total_bedrooms` | Número total de dormitorios registrados en la zona. |
+| `population` | Población total de la zona. |
+| `households` | Número de hogares de la zona. |
+| `median_income` | Ingreso medio de los hogares, expresado en decenas de miles de dólares. |
+| `median_house_value` | Valor medio de las viviendas, expresado en dólares. |
+| `ocean_proximity` | Categoría que describe la proximidad de la zona al océano. |
+
+La variable `median_house_value` será tomada como **variable objetivo**, mientras que las demás variables se utilizarán para describir el conjunto de datos y explorar posibles relaciones con el valor de las viviendas.
+

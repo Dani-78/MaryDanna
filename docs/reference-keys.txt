@@ -33,3 +33,8 @@ antiguedad-habitaciones-y-dormitorios
 resumen-variables-numéricas
 variables-categóricas
 resumen
+análisis-bivariado-de-variable-categórica-vs-numérica
+análisis-bivariado-de-variable-numérica-vs-numérica
+ingreso-antigüedad-habitaciones-y-dormitorios
+población-hogares-latitud-y-longitud
+resumen-1

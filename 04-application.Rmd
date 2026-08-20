@@ -1,0 +1,191 @@
+# Análisis exploratorio bivariado {#bivariado}
+
+```{r LIBRERIA_bivar, include=FALSE}
+library(tidyverse)
+library(Amelia)
+library(moments)
+library(patchwork)
+library(GGally)
+```
+
+```{r, include = FALSE}
+url <- "https://raw.githubusercontent.com/cdeoroaguado/Datos/main/dataml/housing.csv"
+df <- read.csv(url)
+```
+
+ 
+Una vez analizadas individualmente, analizaremos las relaciones entre ellas y la variable objetivo `median_house_value`..
+
+## Análisis bivariado de variable numérica vs numérica
+
+Para comparar dos variables numéricas, es convenienente utilizar gráficos de dispersión.
+
+### Ingreso, Antigüedad, Habitaciones y Dormitorios
+
+Comenzemos comparando el valor medio de las viviendas con el ingreso medio de sus habitantes y variables relacionadas con su condición como son su antigüedad y cantidad de habitaciones y dormitorios.
+
+```{r valorvsingreso}
+df %>%
+  ggplot(aes(x = median_income,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Ingreso medio')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el ingreso medio y el valor de la vivienda') -> disp1 
+```
+
+```{r valorvsage}
+df %>%
+  ggplot(aes(x = housing_median_age,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Edad media de la vivienda')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el la edad promedio y el valor de la vivienda') -> disp2
+
+```
+
+```{r valorvstotalhabitaciones}
+df %>%
+  ggplot(aes(x = total_rooms,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Total de habitaciones')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el total de habitaciones y el valor de la vivienda') -> disp3
+```
+
+
+```{r valorvstotaldormitorios}
+df %>%
+  ggplot(aes(x = total_bedrooms,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Total de dormitorios')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el total de dormitorios y el valor de la vivienda')-> disp4
+```
+
+Veamos los gráficos de dispersión:
+
+```{r gráficos 1-4}
+(disp1 | disp2)/
+(disp3 | disp4)
+```
+
+En la gráfica arriba a la izquierda, se evidencia cómo los puntos presentan una tendencia ascendente, indicando que, a medida que aumenta el ingreso medio (median_income), también tiende a incrementarse el valor medio de las viviendas (median_house_value). En general, la relación entre median_income y median_house_value es positiva y aproximadamente lineal, siendo una de las asociaciones más fuertes del conjunto de datos. Esto sugiere que el ingreso medio constituye una variable con un alto poder explicativo para predecir el valor de las viviendas y, por tanto, será un predictor fundamental en la construcción de los modelos de regresión.
+
+A su vez, en el gráfico de dispersión entre el total de habitaciones y el valor medio de la vivienda se identifica una relación positiva, indicando que a mayor número de habitaciones en una vivienda, mayor será su valor medio. Sin embargo, en el gráfico donde se asocia el total de dormitorios con la variable respuesta vemos que la tendencia es, aunque ascendente, bastante más débil; diferente a lo que esperaríamos considerando la relación que había antes entre los boxplots.
+
+De los gráficos anteriormente presentados, notamos que no existe correlación entre la edad media de la vivienda y su valor medio, lo que significa que la antigüedad de la vivienda no influye en el costo de esta.
+
+
+### Población, Hogares, Latitud y Longitud
+
+Continuemos con las variables relacionadas con el número de hogares, la población y la unicación geográfica de las zonas censadas.
+
+```{r valorvspoblación}
+df %>%
+  ggplot(aes(x = population,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Población')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la poblacion y el valor de la vivienda')-> disp5
+```
+
+
+```{r valorvshouseholds}
+df %>%
+  ggplot(aes(x = households,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Personas viviendo en la misma casa')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la cantidad de personas que viven bajo el mismo techo y el valor de la vivienda')-> disp6
+```
+
+
+```{r valorvslongitud}
+df %>%
+  ggplot(aes(x = longitude,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'datos de longitud')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la longitud y el valor de la vivienda')-> disp7
+```
+
+
+```{r valorvslatitud}
+df %>%
+  ggplot(aes(x = latitude,y=median_house_value))+
+  geom_point(alpha=0.4, color='darkblue')+
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE, color = "black")+
+  labs(y='Valor medio de la vivienda',
+       x= 'Datos de latitud')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la latitud y el valor de la vivienda') -> disp8
+```
+
+```{r gráficos 5-8}
+(disp5 | disp6)/
+(disp7 | disp8)
+```
+
+Ahora, los gráficos que relacionan los datos de longitud y datos de latitud con la variable median_house_value no muestran ninguna correlación, por lo que podemos afirmar que el valor medio no depende de la ubicación geográfica de la vivienda.
+
+Notamos, además, que la variable de población junto a la variable respuesta conservan una relación negativa, es decir, a menor número de habitantes, mayor es el valor medio. Contrario a lo que se muestra cuando se compara la antigüedad de la vivienda con las personas que viven bajo el mismo techo, pues esta correlación es positiva e indica que a medida que aumenta el número de personas que residen en la misma casa, se incrementa el valor de esta.
+
+
+## Análisis bivariado de variable categórica vs numérica
+
+Una vez hemos comparado la variable objetivo con todas las variables numéricas, hacemos lo mismo con la variable categórica `ocean_proximity`. Es decir, comparamos el valor medio de la vivienda con su clasificación según su proximidad al océano.
+
+Veamos esta informacon en una tabla de frecuencias: 
+
+```{r bivalorvsoceano}
+df %>% 
+  group_by(ocean_proximity) %>% 
+  summarise (n = length(median_house_value),
+                  media = mean(median_house_value),
+                  sd = sd(median_house_value),
+                  mediana = median(median_house_value),
+                  RIC = IQR(median_house_value),
+                  Q1 = quantile(median_house_value,0.25),
+                  Q3 = quantile(median_house_value,0.75),
+                  minimo = min(median_house_value),
+                  maximo = max(median_house_value),
+                  curtosis = kurtosis(median_house_value),
+                  asimetria = skewness(median_house_value))
+```
+
+Esta también podemos representarla en forma de gráfico de cajas y bigotes
+
+
+```{r}
+df %>% 
+  ggplot(aes(x=ocean_proximity, y=median_house_value))+
+  geom_boxplot()
+```
+Este gráfico evidencia que las viviendas insulares (`ISLAND`) presentan la mediana de valor más elevada, seguidas por las ubicadas a menos de una hora del océano (`<1H OCEAN`), cerca de la bahía (`NEAR BAY`) y cerca del océano (`NEAR OCEAN`), las cuales comparten rangos de precios similares. Por su parle, las viviendas continentales (`INLAND`) registran la mediana de valor más baja, aunque tienen numerosos valores atípicos 
+
+
+Esto sugiere que, en general, las viviendas en islas son las más costosas; las viviendas continentales tienen los precios más accesibles, a pesar de haber numerosas excepciones; y las demás categorías tienen precios moderados y similares entre sí.
+
+
+## Resumen
+
+Aquí, utilizando el paquete Ggally, podemos ver un resumen de todos los anteriores anális bivariados:
+
+```{r ggally, warning=FALSE}
+ df %>%
+  ggpairs()
+```

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>01-intro.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="01-intro.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="01-intro.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<!-- #Probando 1, 2, 3 {#intro} -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.2.1     ✔ readr     2.2.0
+## ✔ forcats   1.0.1     ✔ stringr   1.6.0
+## ✔ ggplot2   4.0.3     ✔ tibble    3.3.1
+## ✔ lubridate 1.9.5     ✔ tidyr     1.3.2
+## ✔ purrr     1.2.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span></code></pre></div>
+<pre><code>## Cargando paquete requerido: Rcpp
+## ## 
+## ## Amelia II: Multiple Imputation
+## ## (Version 1.8.3, built: 2024-11-07)
+## ## Copyright (C) 2005-2026 James Honaker, Gary King and Matthew Blackwell
+## ## Refer to http://gking.harvard.edu/amelia/ for more information
+## ##</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code></pre></div>
+<p>5 primeras filas</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;country_preferences.csv&quot;</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">head</span>(data_1, <span class="at">n=</span><span class="dv">5</span>)</span></code></pre></div>
+<pre><code>##   country scenario_type character_group n_saved n_outcomes save_rate
+## 1     ABW           Age             Old       3         12    0.2500
+## 2     ABW           Age           Young       5          6    0.8333
+## 3     ABW       Fitness             Fat       2          5    0.4000
+## 4     ABW       Fitness             Fit       4          5    0.8000
+## 5     ABW        Gender          Female       2          4    0.5000
+##   country_name cultural_cluster
+## 1                            NA
+## 2                            NA
+## 3                            NA
+## 4                            NA
+## 5                            NA</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">str</span>(data_1)</span></code></pre></div>
+<pre><code>## &#39;data.frame&#39;:    2388 obs. of  8 variables:
+##  $ country         : chr  &quot;ABW&quot; &quot;ABW&quot; &quot;ABW&quot; &quot;ABW&quot; ...
+##  $ scenario_type   : chr  &quot;Age&quot; &quot;Age&quot; &quot;Fitness&quot; &quot;Fitness&quot; ...
+##  $ character_group : chr  &quot;Old&quot; &quot;Young&quot; &quot;Fat&quot; &quot;Fit&quot; ...
+##  $ n_saved         : int  3 5 2 4 2 3 2 1 6 2 ...
+##  $ n_outcomes      : int  12 6 5 5 4 9 5 5 8 6 ...
+##  $ save_rate       : num  0.25 0.833 0.4 0.8 0.5 ...
+##  $ country_name    : chr  &quot;&quot; &quot;&quot; &quot;&quot; &quot;&quot; ...
+##  $ cultural_cluster: num  NA NA NA NA NA NA NA NA NA NA ...</code></pre>
+<p>Verificar si hay datos faltantes</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>data_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">sum</span>(<span class="fu">is.na</span>(.)),<span class="at">.names =</span> <span class="st">&quot;NA_{.col}&quot;</span> ))</span></code></pre></div>
+<pre><code>##   NA_country NA_scenario_type NA_character_group NA_n_saved NA_n_outcomes
+## 1          0                0                  0          0             0
+##   NA_save_rate NA_country_name NA_cultural_cluster
+## 1            0               0                 828</code></pre>
+<p>Otra forma de detectar valores faltantes</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="fu">missmap</span>(data_1)</span></code></pre></div>
+<p><img src="01-intro_files/figure-html/unnamed-chunk-3-1.png" alt="" width="672" />
+Hagamos la imputación de los datos faltantes</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a>data_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="fu">where</span>(is.numeric), <span class="sc">~</span><span class="fu">ifelse</span>(<span class="fu">is.na</span>(.),<span class="fu">mean</span>(.,<span class="at">na.rm=</span><span class="cn">TRUE</span>),.))) <span class="ot">-&gt;</span> df</span></code></pre></div>
+<p>verifiquemos que se haya hecho</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>data_1 <span class="sc">%&gt;%</span> </span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span><span class="fu">sum</span>(<span class="fu">is.na</span>(.)),<span class="at">.names =</span> <span class="st">&quot;NA_{.col}&quot;</span> ))</span></code></pre></div>
+<pre><code>##   NA_country NA_scenario_type NA_character_group NA_n_saved NA_n_outcomes
+## 1          0                0                  0          0             0
+##   NA_save_rate NA_country_name NA_cultural_cluster
+## 1            0               0                 828</code></pre>
+<p>Hay un número total de 20604 casas, cuyo valor medio corresponde a 206.855,8 dólares (con desviación estándar de <span class="math inline">\(115.396,6\)</span>). El 50% de los valores de estas casas se encuentran entre 119.600 y 264.725 dólares, seguir copiando…</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> save_rate))<span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y=</span><span class="fu">after_stat</span>(density)), <span class="at">binwidth =</span> <span class="fl">0.05</span>, <span class="at">fill=</span> <span class="st">&quot;#797bb0&quot;</span>, <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, <span class="at">alpha=</span><span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="at">linewidth=</span><span class="fl">1.2</span>)<span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">&#39;Distribución del valor medio de las viviendas&#39;</span>, <span class="at">x=</span><span class="st">&#39;tasa de recuperación&#39;</span>,<span class="at">y=</span><span class="st">&#39;densidad&#39;</span>)<span class="sc">+</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="01-intro_files/figure-html/histhousevalue-1.png" alt="" width="672" /></p>
+<p>Descripción de historigrama:
+En el gráfico anterior se evidencia un sesgo a la derecha y notamos que las casas entre los precios _____ y ______ son los que cuentan con una mayor densidad, mientras que las casas cuyos valores oscilan entre ______ y _______ tienen una densidad visiblemente menor.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>df<span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y=</span>save_rate))<span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;#797bb0&quot;</span>, <span class="at">color=</span><span class="st">&quot;black&quot;</span>, <span class="at">outlier.color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="ot">-&gt;</span> p1 <span class="co">#Asignarlo a un objeto para unir varios gráficos haciendo p1 + p2 + p3</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>  <span class="co">#Falta asignarle nombre a las variables y título.</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>  <span class="co">#revisar notas de Métodos Estadísticos para terminar y adaptar al trabajo.</span></span></code></pre></div>
+<p>##Análisis de las variables independientes (características)</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span>  <span class="co">#ctrl+shift+M</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric), <span class="sc">-</span>save_rate) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&#39;variable&#39;</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&#39;valor&#39;</span></span>
+<span id="cb18-7"><a href="#cb18-7" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb18-8"><a href="#cb18-8" tabindex="-1"></a>  <span class="fu">group_by</span>(variable) <span class="sc">%&gt;%</span> <span class="co">#ctrl+F - para cambiar el nombre de varias cosas al mismo tiempo</span></span>
+<span id="cb18-9"><a href="#cb18-9" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">length</span>(valor),</span>
+<span id="cb18-10"><a href="#cb18-10" tabindex="-1"></a>            <span class="at">media =</span> <span class="fu">mean</span>(valor),</span>
+<span id="cb18-11"><a href="#cb18-11" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(valor),</span>
+<span id="cb18-12"><a href="#cb18-12" tabindex="-1"></a>            <span class="at">mediana =</span> <span class="fu">median</span>(valor),</span>
+<span id="cb18-13"><a href="#cb18-13" tabindex="-1"></a>            <span class="at">RIC =</span> <span class="fu">IQR</span>(valor),</span>
+<span id="cb18-14"><a href="#cb18-14" tabindex="-1"></a>            <span class="at">Q1 =</span> <span class="fu">quantile</span>(valor, <span class="fl">0.25</span>),</span>
+<span id="cb18-15"><a href="#cb18-15" tabindex="-1"></a>            <span class="at">Q3 =</span> <span class="fu">quantile</span>(valor, <span class="fl">0.75</span>),</span>
+<span id="cb18-16"><a href="#cb18-16" tabindex="-1"></a>            <span class="at">minimo =</span> <span class="fu">min</span>(valor),</span>
+<span id="cb18-17"><a href="#cb18-17" tabindex="-1"></a>            <span class="at">maximo =</span> <span class="fu">max</span>(valor),</span>
+<span id="cb18-18"><a href="#cb18-18" tabindex="-1"></a>            <span class="at">asim =</span> e1071<span class="sc">::</span><span class="fu">skewness</span>(valor))</span></code></pre></div>
+<pre><code>## # A tibble: 3 × 11
+##   variable      n   media      sd mediana   RIC    Q1    Q3 minimo maximo   asim
+##   &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 cultural…  2388 7.54e-1 6.88e-1   0.754     1     0     1      0      2  0.609
+## 2 n_outcom…  2388 1.48e+3 6.30e+3  35       484     5   489      1  90488 10.4  
+## 3 n_saved    2388 6.81e+2 3.21e+3  15       203     2   205      0  67977 13.2</code></pre>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="co">#Hacer la interpretación de CADA variable.</span></span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="co">#Hacer boxplot para CADA variable.</span></span></code></pre></div>
+<p>##Análisis exploratorio bivariado
+Comparar la variable respuesta con todas las variables numéricas.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>n_outcomes, <span class="at">y=</span>save_rate))<span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.4</span>, <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>)<span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;tasa de recuperación&#39;</span>,<span class="at">x=</span><span class="st">&#39;número de outcomes&#39;</span>)</span></code></pre></div>
+<p><img src="01-intro_files/figure-html/n_outcomes-1.png" alt="" width="672" />
+Ahora comparemos la tasa de recuperación -&gt; SEGÚN (cuando la variable que sigue es categórica)&lt;- el tipo de escenario</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="co">#ctrl+shift+M</span></span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>  <span class="fu">group_by</span>(scenario_type) <span class="sc">%&gt;%</span> <span class="co">#ctrl+F - para cambiar el nombre de varias cosas al mismo tiempo</span></span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">n =</span> <span class="fu">length</span>(save_rate),</span>
+<span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>            <span class="at">media =</span> <span class="fu">mean</span>(save_rate),</span>
+<span id="cb22-5"><a href="#cb22-5" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(save_rate),</span>
+<span id="cb22-6"><a href="#cb22-6" tabindex="-1"></a>            <span class="at">mediana =</span> <span class="fu">median</span>(save_rate),</span>
+<span id="cb22-7"><a href="#cb22-7" tabindex="-1"></a>            <span class="at">RIC =</span> <span class="fu">IQR</span>(save_rate),</span>
+<span id="cb22-8"><a href="#cb22-8" tabindex="-1"></a>            <span class="at">Q1 =</span> <span class="fu">quantile</span>(save_rate, <span class="fl">0.25</span>),</span>
+<span id="cb22-9"><a href="#cb22-9" tabindex="-1"></a>            <span class="at">Q3 =</span> <span class="fu">quantile</span>(save_rate, <span class="fl">0.75</span>),</span>
+<span id="cb22-10"><a href="#cb22-10" tabindex="-1"></a>            <span class="at">minimo =</span> <span class="fu">min</span>(save_rate),</span>
+<span id="cb22-11"><a href="#cb22-11" tabindex="-1"></a>            <span class="at">maximo =</span> <span class="fu">max</span>(save_rate),</span>
+<span id="cb22-12"><a href="#cb22-12" tabindex="-1"></a>            <span class="at">asim =</span> e1071<span class="sc">::</span><span class="fu">skewness</span>(save_rate, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 6 × 11
+##   scenario_type     n media    sd mediana   RIC    Q1    Q3 minimo maximo   asim
+##   &lt;chr&gt;         &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 Age             410 0.471 0.312   0.477 0.527 0.208 0.734      0      1 0.0841
+## 2 Fitness         397 0.443 0.226   0.435 0.212 0.333 0.546      0      1 0.319 
+## 3 Gender          405 0.449 0.226   0.454 0.168 0.359 0.526      0      1 0.369 
+## 4 Social Status   365 0.467 0.290   0.417 0.408 0.281 0.689      0      1 0.0676
+## 5 Species         403 0.481 0.345   0.5   0.625 0.167 0.792      0      1 0.0251
+## 6 Utilitarian     408 0.462 0.317   0.4   0.541 0.200 0.741      0      1 0.111</code></pre>
+<p>##Paquete GGally</p>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": true,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": null,
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": false,
+  "toc": {
+    "collapse": "subsection"
+  },
+  "toolbar": {
+    "position": "fixed"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 5 Análisis exploratorio bivariado | Análisis exploratorio de datos de viviendas</title>
+  <title>Capítulo: 4 Análisis exploratorio bivariado | Análisis exploratorio de datos de viviendas</title>
   <meta name="description" content="Análisis exploratorio del conjunto de datos de viviendas." />
   <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 5 Análisis exploratorio bivariado | Análisis exploratorio de datos de viviendas" />
+  <meta property="og:title" content="Capítulo: 4 Análisis exploratorio bivariado | Análisis exploratorio de datos de viviendas" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Análisis exploratorio del conjunto de datos de viviendas." />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 5 Análisis exploratorio bivariado | Análisis exploratorio de datos de viviendas" />
+  <meta name="twitter:title" content="Capítulo: 4 Análisis exploratorio bivariado | Análisis exploratorio de datos de viviendas" />
   
   <meta name="twitter:description" content="Análisis exploratorio del conjunto de datos de viviendas." />
   
@@ -23,7 +23,7 @@
 <meta name="author" content="Danna De la Hoz y Mary Silva" />
 
 
-<meta name="date" content="2026-08-11" />
+<meta name="date" content="2026-08-20" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -55,9 +55,8 @@
 
 
 <style type="text/css">
-html { -webkit-text-size-adjust: 100%; }
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -67,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -145,34 +144,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#an%C3%A1lisis-exploratorio-de-datos-de-viviendas"><i class="fa fa-check"></i><b>0.1</b> Análisis exploratorio de datos de viviendas</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="prerequisites.html"><a href="prerequisites.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
-<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introducción</a>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="intro.html"><a href="intro.html#contexto-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>2.1</b> Contexto del análisis</a></li>
-<li class="chapter" data-level="2.2" data-path="intro.html"><a href="intro.html#objetivo"><i class="fa fa-check"></i><b>2.2</b> Objetivo</a></li>
-<li class="chapter" data-level="2.3" data-path="intro.html"><a href="intro.html#descripci%C3%B3n-de-las-variables"><i class="fa fa-check"></i><b>2.3</b> Descripción de las variables</a></li>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#contexto-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>1.1</b> Contexto del análisis</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#objetivo"><i class="fa fa-check"></i><b>1.2</b> Objetivo</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#descripci%C3%B3n-de-las-variables"><i class="fa fa-check"></i><b>1.3</b> Descripción de las variables</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="preparacion.html"><a href="preparacion.html"><i class="fa fa-check"></i><b>3</b> Preparación de los datos</a>
+<li class="chapter" data-level="2" data-path="preparacion.html"><a href="preparacion.html"><i class="fa fa-check"></i><b>2</b> Preparación de los datos</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="preparacion.html"><a href="preparacion.html#librer%C3%ADas-utilizadas"><i class="fa fa-check"></i><b>3.1</b> Librerías utilizadas</a></li>
-<li class="chapter" data-level="3.2" data-path="preparacion.html"><a href="preparacion.html#carga-del-conjunto-de-datos"><i class="fa fa-check"></i><b>3.2</b> Carga del conjunto de datos</a></li>
-<li class="chapter" data-level="3.3" data-path="preparacion.html"><a href="preparacion.html#tratamiento-de-valores-ausentes"><i class="fa fa-check"></i><b>3.3</b> Tratamiento de valores ausentes</a></li>
+<li class="chapter" data-level="2.1" data-path="preparacion.html"><a href="preparacion.html#librer%C3%ADas-utilizadas"><i class="fa fa-check"></i><b>2.1</b> Librerías utilizadas</a></li>
+<li class="chapter" data-level="2.2" data-path="preparacion.html"><a href="preparacion.html#carga-del-conjunto-de-datos"><i class="fa fa-check"></i><b>2.2</b> Carga del conjunto de datos</a></li>
+<li class="chapter" data-level="2.3" data-path="preparacion.html"><a href="preparacion.html#tratamiento-de-valores-ausentes"><i class="fa fa-check"></i><b>2.3</b> Tratamiento de valores ausentes</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="univariado.html"><a href="univariado.html"><i class="fa fa-check"></i><b>4</b> Análisis exploratorio univariado</a>
+<li class="chapter" data-level="3" data-path="univariado.html"><a href="univariado.html"><i class="fa fa-check"></i><b>3</b> Análisis exploratorio univariado</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="univariado.html"><a href="univariado.html#valor-medio-de-las-viviendas"><i class="fa fa-check"></i><b>4.1</b> Valor medio de las viviendas</a>
+<li class="chapter" data-level="3.1" data-path="univariado.html"><a href="univariado.html#variable-objetivo-valor-medio-de-las-viviendas"><i class="fa fa-check"></i><b>3.1</b> Variable Objetivo: Valor medio de las viviendas</a>
 <ul>
-<li class="chapter" data-level="4.1.1" data-path="univariado.html"><a href="univariado.html#medidas-estad%C3%ADsticas"><i class="fa fa-check"></i><b>4.1.1</b> Medidas estadísticas</a></li>
-<li class="chapter" data-level="4.1.2" data-path="univariado.html"><a href="univariado.html#histograma"><i class="fa fa-check"></i><b>4.1.2</b> Histograma</a></li>
-<li class="chapter" data-level="4.1.3" data-path="univariado.html"><a href="univariado.html#diagrama-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>4.1.3</b> Diagrama de cajas y bigotes</a></li>
+<li class="chapter" data-level="3.1.1" data-path="univariado.html"><a href="univariado.html#medidas-estad%C3%ADsticas"><i class="fa fa-check"></i><b>3.1.1</b> Medidas estadísticas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="univariado.html"><a href="univariado.html#histograma"><i class="fa fa-check"></i><b>3.1.2</b> Histograma</a></li>
+<li class="chapter" data-level="3.1.3" data-path="univariado.html"><a href="univariado.html#diagrama-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>3.1.3</b> Diagrama de cajas y bigotes</a></li>
 </ul></li>
-<li class="chapter" data-level="4.2" data-path="univariado.html"><a href="univariado.html#dem%C3%A1s-variables-num%C3%A9ricas"><i class="fa fa-check"></i><b>4.2</b> Demás variables numéricas</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="bivariado.html"><a href="bivariado.html"><i class="fa fa-check"></i><b>5</b> Análisis exploratorio bivariado</a>
+<li class="chapter" data-level="3.2" data-path="univariado.html"><a href="univariado.html#variables-num%C3%A9ricas"><i class="fa fa-check"></i><b>3.2</b> Variables Numéricas</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="bivariado.html"><a href="bivariado.html#paquete-ggally"><i class="fa fa-check"></i><b>5.1</b> Paquete GGally</a></li>
+<li class="chapter" data-level="3.2.1" data-path="univariado.html"><a href="univariado.html#poblaci%C3%B3n-hogares-e-ingresos"><i class="fa fa-check"></i><b>3.2.1</b> Población, Hogares e Ingresos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="univariado.html"><a href="univariado.html#antiguedad-habitaciones-y-dormitorios"><i class="fa fa-check"></i><b>3.2.2</b> Antiguedad, Habitaciones y Dormitorios</a></li>
+<li class="chapter" data-level="3.2.3" data-path="univariado.html"><a href="univariado.html#coordenadas-geogr%C3%A1ficas"><i class="fa fa-check"></i><b>3.2.3</b> Coordenadas geográficas</a></li>
+<li class="chapter" data-level="3.2.4" data-path="univariado.html"><a href="univariado.html#resumen"><i class="fa fa-check"></i><b>3.2.4</b> Resumen</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="3.3" data-path="univariado.html"><a href="univariado.html#variables-categ%C3%B3ricas"><i class="fa fa-check"></i><b>3.3</b> Variables Categóricas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="univariado.html"><a href="univariado.html#proximidad-al-oc%C3%A9ano"><i class="fa fa-check"></i><b>3.3.1</b> Proximidad al océano</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bivariado.html"><a href="bivariado.html"><i class="fa fa-check"></i><b>4</b> Análisis exploratorio bivariado</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bivariado.html"><a href="bivariado.html#an%C3%A1lisis-bivariado-de-variable-num%C3%A9rica-vs-num%C3%A9rica"><i class="fa fa-check"></i><b>4.1</b> Análisis bivariado de variable numérica vs numérica</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="bivariado.html"><a href="bivariado.html#ingreso-antig%C3%BCedad-habitaciones-y-dormitorios"><i class="fa fa-check"></i><b>4.1.1</b> Ingreso, Antigüedad, Habitaciones y Dormitorios</a></li>
+<li class="chapter" data-level="4.1.2" data-path="bivariado.html"><a href="bivariado.html#poblaci%C3%B3n-hogares-latitud-y-longitud"><i class="fa fa-check"></i><b>4.1.2</b> Población, Hogares, Latitud y Longitud</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="bivariado.html"><a href="bivariado.html#an%C3%A1lisis-bivariado-de-variable-categ%C3%B3rica-vs-num%C3%A9rica"><i class="fa fa-check"></i><b>4.2</b> Análisis bivariado de variable categórica vs numérica</a></li>
+<li class="chapter" data-level="4.3" data-path="bivariado.html"><a href="bivariado.html#resumen-1"><i class="fa fa-check"></i><b>4.3</b> Resumen</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -194,35 +208,118 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="bivariado" class="section level1 hasAnchor" number="5">
-<h1><span class="header-section-number">Chapter 5</span> Análisis exploratorio bivariado<a href="bivariado.html#bivariado" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="bivariado.html#cb34-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb34-2"><a href="bivariado.html#cb34-2" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span>
-<span id="cb34-3"><a href="bivariado.html#cb34-3" tabindex="-1"></a><span class="fu">library</span>(moments)</span>
-<span id="cb34-4"><a href="bivariado.html#cb34-4" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
-<span id="cb34-5"><a href="bivariado.html#cb34-5" tabindex="-1"></a><span class="fu">library</span>(GGally)</span></code></pre></div>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="bivariado.html#cb35-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb35-2"><a href="bivariado.html#cb35-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> median_income,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb35-3"><a href="bivariado.html#cb35-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb35-4"><a href="bivariado.html#cb35-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb35-5"><a href="bivariado.html#cb35-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb35-6"><a href="bivariado.html#cb35-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Ingreso medio&#39;</span>)<span class="sc">+</span></span>
-<span id="cb35-7"><a href="bivariado.html#cb35-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb35-8"><a href="bivariado.html#cb35-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el ingreso medio y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp1 </span></code></pre></div>
-<p>Ahora comparemos el valor medio de la vivienda según la proximidad al océano.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="bivariado.html#cb36-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb36-2"><a href="bivariado.html#cb36-2" tabindex="-1"></a>  <span class="fu">group_by</span>(ocean_proximity) <span class="sc">%&gt;%</span> </span>
-<span id="cb36-3"><a href="bivariado.html#cb36-3" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">n =</span> <span class="fu">length</span>(median_house_value),</span>
-<span id="cb36-4"><a href="bivariado.html#cb36-4" tabindex="-1"></a>                  <span class="at">media =</span> <span class="fu">mean</span>(median_house_value),</span>
-<span id="cb36-5"><a href="bivariado.html#cb36-5" tabindex="-1"></a>                  <span class="at">sd =</span> <span class="fu">sd</span>(median_house_value),</span>
-<span id="cb36-6"><a href="bivariado.html#cb36-6" tabindex="-1"></a>                  <span class="at">mediana =</span> <span class="fu">median</span>(median_house_value),</span>
-<span id="cb36-7"><a href="bivariado.html#cb36-7" tabindex="-1"></a>                  <span class="at">RIC =</span> <span class="fu">IQR</span>(median_house_value),</span>
-<span id="cb36-8"><a href="bivariado.html#cb36-8" tabindex="-1"></a>                  <span class="at">Q1 =</span> <span class="fu">quantile</span>(median_house_value,<span class="fl">0.25</span>),</span>
-<span id="cb36-9"><a href="bivariado.html#cb36-9" tabindex="-1"></a>                  <span class="at">Q3 =</span> <span class="fu">quantile</span>(median_house_value,<span class="fl">0.75</span>),</span>
-<span id="cb36-10"><a href="bivariado.html#cb36-10" tabindex="-1"></a>                  <span class="at">minimo =</span> <span class="fu">min</span>(median_house_value),</span>
-<span id="cb36-11"><a href="bivariado.html#cb36-11" tabindex="-1"></a>                  <span class="at">maximo =</span> <span class="fu">max</span>(median_house_value),</span>
-<span id="cb36-12"><a href="bivariado.html#cb36-12" tabindex="-1"></a>                  <span class="at">curtosis =</span> <span class="fu">kurtosis</span>(median_house_value),</span>
-<span id="cb36-13"><a href="bivariado.html#cb36-13" tabindex="-1"></a>                  <span class="at">asimetria =</span> <span class="fu">skewness</span>(median_house_value))</span></code></pre></div>
+<div id="bivariado" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Capítulo: 4</span> Análisis exploratorio bivariado<a href="bivariado.html#bivariado" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Una vez analizadas individualmente, analizaremos las relaciones entre ellas y la variable objetivo <code>median_house_value</code>..</p>
+<div id="análisis-bivariado-de-variable-numérica-vs-numérica" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Análisis bivariado de variable numérica vs numérica<a href="bivariado.html#an%C3%A1lisis-bivariado-de-variable-num%C3%A9rica-vs-num%C3%A9rica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para comparar dos variables numéricas, es convenienente utilizar gráficos de dispersión.</p>
+<div id="ingreso-antigüedad-habitaciones-y-dormitorios" class="section level3 hasAnchor" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Ingreso, Antigüedad, Habitaciones y Dormitorios<a href="bivariado.html#ingreso-antig%C3%BCedad-habitaciones-y-dormitorios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Comenzemos comparando el valor medio de las viviendas con el ingreso medio de sus habitantes y variables relacionadas con su condición como son su antigüedad y cantidad de habitaciones y dormitorios.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="bivariado.html#cb1-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="bivariado.html#cb1-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> median_income,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb1-3"><a href="bivariado.html#cb1-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb1-4"><a href="bivariado.html#cb1-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb1-5"><a href="bivariado.html#cb1-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb1-6"><a href="bivariado.html#cb1-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Ingreso medio&#39;</span>)<span class="sc">+</span></span>
+<span id="cb1-7"><a href="bivariado.html#cb1-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb1-8"><a href="bivariado.html#cb1-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre el ingreso medio y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp1 </span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="bivariado.html#cb2-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="bivariado.html#cb2-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> housing_median_age,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb2-3"><a href="bivariado.html#cb2-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb2-4"><a href="bivariado.html#cb2-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb2-5"><a href="bivariado.html#cb2-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb2-6"><a href="bivariado.html#cb2-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Edad media de la vivienda&#39;</span>)<span class="sc">+</span></span>
+<span id="cb2-7"><a href="bivariado.html#cb2-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb2-8"><a href="bivariado.html#cb2-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre el la edad promedio y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp2</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="bivariado.html#cb3-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="bivariado.html#cb3-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_rooms,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb3-3"><a href="bivariado.html#cb3-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb3-4"><a href="bivariado.html#cb3-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb3-5"><a href="bivariado.html#cb3-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb3-6"><a href="bivariado.html#cb3-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Total de habitaciones&#39;</span>)<span class="sc">+</span></span>
+<span id="cb3-7"><a href="bivariado.html#cb3-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb3-8"><a href="bivariado.html#cb3-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre el total de habitaciones y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp3</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="bivariado.html#cb4-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="bivariado.html#cb4-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_bedrooms,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb4-3"><a href="bivariado.html#cb4-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb4-4"><a href="bivariado.html#cb4-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb4-5"><a href="bivariado.html#cb4-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb4-6"><a href="bivariado.html#cb4-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Total de dormitorios&#39;</span>)<span class="sc">+</span></span>
+<span id="cb4-7"><a href="bivariado.html#cb4-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb4-8"><a href="bivariado.html#cb4-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre el total de dormitorios y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp4</span></code></pre></div>
+<p>Veamos los gráficos de dispersión:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="bivariado.html#cb5-1" tabindex="-1"></a>(disp1 <span class="sc">|</span> disp2)<span class="sc">/</span></span>
+<span id="cb5-2"><a href="bivariado.html#cb5-2" tabindex="-1"></a>(disp3 <span class="sc">|</span> disp4)</span></code></pre></div>
+<pre><code>## Warning: Removed 207 rows containing non-finite outside the scale range
+## (`stat_smooth()`).</code></pre>
+<pre><code>## Warning: Removed 207 rows containing missing values or values outside the scale range
+## (`geom_point()`).</code></pre>
+<p><img src="bookdown-demo_files/figure-html/gr%C3%A1ficos%201-4-1.png" width="672" /></p>
+<p>En la gráfica arriba a la izquierda, se evidencia cómo los puntos presentan una tendencia ascendente, indicando que, a medida que aumenta el ingreso medio (median_income), también tiende a incrementarse el valor medio de las viviendas (median_house_value). En general, la relación entre median_income y median_house_value es positiva y aproximadamente lineal, siendo una de las asociaciones más fuertes del conjunto de datos. Esto sugiere que el ingreso medio constituye una variable con un alto poder explicativo para predecir el valor de las viviendas y, por tanto, será un predictor fundamental en la construcción de los modelos de regresión.</p>
+<p>A su vez, en el gráfico de dispersión entre el total de habitaciones y el valor medio de la vivienda se identifica una relación positiva, indicando que a mayor número de habitaciones en una vivienda, mayor será su valor medio. Sin embargo, en el gráfico donde se asocia el total de dormitorios con la variable respuesta vemos que la tendencia es, aunque ascendente, bastante más débil; diferente a lo que esperaríamos considerando la relación que había antes entre los boxplots.</p>
+<p>De los gráficos anteriormente presentados, notamos que no existe correlación entre la edad media de la vivienda y su valor medio, lo que significa que la antigüedad de la vivienda no influye en el costo de esta.</p>
+</div>
+<div id="población-hogares-latitud-y-longitud" class="section level3 hasAnchor" number="4.1.2">
+<h3><span class="header-section-number">4.1.2</span> Población, Hogares, Latitud y Longitud<a href="bivariado.html#poblaci%C3%B3n-hogares-latitud-y-longitud" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Continuemos con las variables relacionadas con el número de hogares, la población y la unicación geográfica de las zonas censadas.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="bivariado.html#cb8-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb8-2"><a href="bivariado.html#cb8-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> population,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb8-3"><a href="bivariado.html#cb8-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb8-4"><a href="bivariado.html#cb8-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb8-5"><a href="bivariado.html#cb8-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb8-6"><a href="bivariado.html#cb8-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Población&#39;</span>)<span class="sc">+</span></span>
+<span id="cb8-7"><a href="bivariado.html#cb8-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb8-8"><a href="bivariado.html#cb8-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre la poblacion y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp5</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="bivariado.html#cb9-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="bivariado.html#cb9-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> households,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb9-3"><a href="bivariado.html#cb9-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb9-4"><a href="bivariado.html#cb9-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb9-5"><a href="bivariado.html#cb9-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb9-6"><a href="bivariado.html#cb9-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Personas viviendo en la misma casa&#39;</span>)<span class="sc">+</span></span>
+<span id="cb9-7"><a href="bivariado.html#cb9-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb9-8"><a href="bivariado.html#cb9-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre la cantidad de personas que viven bajo el mismo techo y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp6</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="bivariado.html#cb10-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="bivariado.html#cb10-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> longitude,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb10-3"><a href="bivariado.html#cb10-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb10-4"><a href="bivariado.html#cb10-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="bivariado.html#cb10-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb10-6"><a href="bivariado.html#cb10-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;datos de longitud&#39;</span>)<span class="sc">+</span></span>
+<span id="cb10-7"><a href="bivariado.html#cb10-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb10-8"><a href="bivariado.html#cb10-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre la longitud y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp7</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="bivariado.html#cb11-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="bivariado.html#cb11-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> latitude,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb11-3"><a href="bivariado.html#cb11-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb11-4"><a href="bivariado.html#cb11-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb11-5"><a href="bivariado.html#cb11-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
+<span id="cb11-6"><a href="bivariado.html#cb11-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Datos de latitud&#39;</span>)<span class="sc">+</span></span>
+<span id="cb11-7"><a href="bivariado.html#cb11-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb11-8"><a href="bivariado.html#cb11-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersion entre la latitud y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp8</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="bivariado.html#cb12-1" tabindex="-1"></a>(disp5 <span class="sc">|</span> disp6)<span class="sc">/</span></span>
+<span id="cb12-2"><a href="bivariado.html#cb12-2" tabindex="-1"></a>(disp7 <span class="sc">|</span> disp8)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/gr%C3%A1ficos%205-8-1.png" width="672" /></p>
+<p>Ahora, los gráficos que relacionan los datos de longitud y datos de latitud con la variable median_house_value no muestran ninguna correlación, por lo que podemos afirmar que el valor medio no depende de la ubicación geográfica de la vivienda.</p>
+<p>Notamos, además, que la variable de población junto a la variable respuesta conservan una relación negativa, es decir, a menor número de habitantes, mayor es el valor medio. Contrario a lo que se muestra cuando se compara la antigüedad de la vivienda con las personas que viven bajo el mismo techo, pues esta correlación es positiva e indica que a medida que aumenta el número de personas que residen en la misma casa, se incrementa el valor de esta.</p>
+</div>
+</div>
+<div id="análisis-bivariado-de-variable-categórica-vs-numérica" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Análisis bivariado de variable categórica vs numérica<a href="bivariado.html#an%C3%A1lisis-bivariado-de-variable-categ%C3%B3rica-vs-num%C3%A9rica" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Una vez hemos comparado la variable objetivo con todas las variables numéricas, hacemos lo mismo con la variable categórica <code>ocean_proximity</code>. Es decir, comparamos el valor medio de la vivienda con su clasificación según su proximidad al océano.</p>
+<p>Veamos esta informacon en una tabla de frecuencias:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="bivariado.html#cb13-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb13-2"><a href="bivariado.html#cb13-2" tabindex="-1"></a>  <span class="fu">group_by</span>(ocean_proximity) <span class="sc">%&gt;%</span> </span>
+<span id="cb13-3"><a href="bivariado.html#cb13-3" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">n =</span> <span class="fu">length</span>(median_house_value),</span>
+<span id="cb13-4"><a href="bivariado.html#cb13-4" tabindex="-1"></a>                  <span class="at">media =</span> <span class="fu">mean</span>(median_house_value),</span>
+<span id="cb13-5"><a href="bivariado.html#cb13-5" tabindex="-1"></a>                  <span class="at">sd =</span> <span class="fu">sd</span>(median_house_value),</span>
+<span id="cb13-6"><a href="bivariado.html#cb13-6" tabindex="-1"></a>                  <span class="at">mediana =</span> <span class="fu">median</span>(median_house_value),</span>
+<span id="cb13-7"><a href="bivariado.html#cb13-7" tabindex="-1"></a>                  <span class="at">RIC =</span> <span class="fu">IQR</span>(median_house_value),</span>
+<span id="cb13-8"><a href="bivariado.html#cb13-8" tabindex="-1"></a>                  <span class="at">Q1 =</span> <span class="fu">quantile</span>(median_house_value,<span class="fl">0.25</span>),</span>
+<span id="cb13-9"><a href="bivariado.html#cb13-9" tabindex="-1"></a>                  <span class="at">Q3 =</span> <span class="fu">quantile</span>(median_house_value,<span class="fl">0.75</span>),</span>
+<span id="cb13-10"><a href="bivariado.html#cb13-10" tabindex="-1"></a>                  <span class="at">minimo =</span> <span class="fu">min</span>(median_house_value),</span>
+<span id="cb13-11"><a href="bivariado.html#cb13-11" tabindex="-1"></a>                  <span class="at">maximo =</span> <span class="fu">max</span>(median_house_value),</span>
+<span id="cb13-12"><a href="bivariado.html#cb13-12" tabindex="-1"></a>                  <span class="at">curtosis =</span> <span class="fu">kurtosis</span>(median_house_value),</span>
+<span id="cb13-13"><a href="bivariado.html#cb13-13" tabindex="-1"></a>                  <span class="at">asimetria =</span> <span class="fu">skewness</span>(median_house_value))</span></code></pre></div>
 <pre><code>## # A tibble: 5 × 12
 ##   ocean_proximity     n  media     sd mediana    RIC     Q1     Q3 minimo maximo
 ##   &lt;chr&gt;           &lt;int&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
@@ -232,78 +329,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 NEAR BAY         2290 2.59e5 1.23e5  233800 183200 162500 345700  22500 500001
 ## 5 NEAR OCEAN       2658 2.49e5 1.22e5  229450 172750 150000 322750  22500 500001
 ## # ℹ 2 more variables: curtosis &lt;dbl&gt;, asimetria &lt;dbl&gt;</code></pre>
-<p>veamos un gráfico de cajas y bigotes</p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="bivariado.html#cb38-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
-<span id="cb38-2"><a href="bivariado.html#cb38-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ocean_proximity, <span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb38-3"><a href="bivariado.html#cb38-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-6-1.png" alt="" width="672" />
-##Análisis bivariado de variable numérica vs numérica</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="bivariado.html#cb39-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb39-2"><a href="bivariado.html#cb39-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> housing_median_age,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb39-3"><a href="bivariado.html#cb39-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb39-4"><a href="bivariado.html#cb39-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb39-5"><a href="bivariado.html#cb39-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb39-6"><a href="bivariado.html#cb39-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Edad media de la vivienda&#39;</span>)<span class="sc">+</span></span>
-<span id="cb39-7"><a href="bivariado.html#cb39-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb39-8"><a href="bivariado.html#cb39-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el la edad promedio y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp2</span></code></pre></div>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="bivariado.html#cb40-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb40-2"><a href="bivariado.html#cb40-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_rooms,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb40-3"><a href="bivariado.html#cb40-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb40-4"><a href="bivariado.html#cb40-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb40-5"><a href="bivariado.html#cb40-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb40-6"><a href="bivariado.html#cb40-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Total de habitaciones&#39;</span>)<span class="sc">+</span></span>
-<span id="cb40-7"><a href="bivariado.html#cb40-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb40-8"><a href="bivariado.html#cb40-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el total de habitaciones y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp3</span></code></pre></div>
-<div class="sourceCode" id="cb41"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb41-1"><a href="bivariado.html#cb41-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a href="bivariado.html#cb41-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> total_bedrooms,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb41-3"><a href="bivariado.html#cb41-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb41-4"><a href="bivariado.html#cb41-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb41-5"><a href="bivariado.html#cb41-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb41-6"><a href="bivariado.html#cb41-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Total de dormitorios&#39;</span>)<span class="sc">+</span></span>
-<span id="cb41-7"><a href="bivariado.html#cb41-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb41-8"><a href="bivariado.html#cb41-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el total de dormitorios y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp4</span></code></pre></div>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="bivariado.html#cb42-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb42-2"><a href="bivariado.html#cb42-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> population,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb42-3"><a href="bivariado.html#cb42-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb42-4"><a href="bivariado.html#cb42-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb42-5"><a href="bivariado.html#cb42-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb42-6"><a href="bivariado.html#cb42-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Población&#39;</span>)<span class="sc">+</span></span>
-<span id="cb42-7"><a href="bivariado.html#cb42-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb42-8"><a href="bivariado.html#cb42-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre la población y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp5</span></code></pre></div>
-<div class="sourceCode" id="cb43"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb43-1"><a href="bivariado.html#cb43-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb43-2"><a href="bivariado.html#cb43-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> households,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb43-3"><a href="bivariado.html#cb43-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb43-4"><a href="bivariado.html#cb43-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb43-5"><a href="bivariado.html#cb43-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb43-6"><a href="bivariado.html#cb43-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Personas viviendo en la misma casa&#39;</span>)<span class="sc">+</span></span>
-<span id="cb43-7"><a href="bivariado.html#cb43-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb43-8"><a href="bivariado.html#cb43-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre la cantidad de personas que viven bajo el mismo techo y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp6</span></code></pre></div>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="bivariado.html#cb44-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb44-2"><a href="bivariado.html#cb44-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> longitude,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb44-3"><a href="bivariado.html#cb44-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb44-4"><a href="bivariado.html#cb44-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb44-5"><a href="bivariado.html#cb44-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb44-6"><a href="bivariado.html#cb44-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;datos de longitud&#39;</span>)<span class="sc">+</span></span>
-<span id="cb44-7"><a href="bivariado.html#cb44-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb44-8"><a href="bivariado.html#cb44-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre la longitud y el valor de la vivienda&#39;</span>)<span class="ot">-&gt;</span> disp7</span></code></pre></div>
-<div class="sourceCode" id="cb45"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb45-1"><a href="bivariado.html#cb45-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
-<span id="cb45-2"><a href="bivariado.html#cb45-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> latitude,<span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
-<span id="cb45-3"><a href="bivariado.html#cb45-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>, <span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
-<span id="cb45-4"><a href="bivariado.html#cb45-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">formula =</span> y <span class="sc">~</span> x, <span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">color =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb45-5"><a href="bivariado.html#cb45-5" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">y=</span><span class="st">&#39;Valor medio de la vivienda&#39;</span>,</span>
-<span id="cb45-6"><a href="bivariado.html#cb45-6" tabindex="-1"></a>       <span class="at">x=</span> <span class="st">&#39;Datos de latitud&#39;</span>)<span class="sc">+</span></span>
-<span id="cb45-7"><a href="bivariado.html#cb45-7" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
-<span id="cb45-8"><a href="bivariado.html#cb45-8" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre la latitud y el valor de la vivienda&#39;</span>) <span class="ot">-&gt;</span> disp8</span></code></pre></div>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="bivariado.html#cb46-1" tabindex="-1"></a>(disp1 <span class="sc">|</span> disp2)<span class="sc">/</span></span>
-<span id="cb46-2"><a href="bivariado.html#cb46-2" tabindex="-1"></a>(disp3 <span class="sc">|</span> disp4)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/gr%C3%A1ficos%201-4-1.png" alt="" width="672" /></p>
-<div class="sourceCode" id="cb47"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb47-1"><a href="bivariado.html#cb47-1" tabindex="-1"></a>(disp5 <span class="sc">|</span> disp6)<span class="sc">/</span></span>
-<span id="cb47-2"><a href="bivariado.html#cb47-2" tabindex="-1"></a>(disp7 <span class="sc">|</span> disp8)</span></code></pre></div>
-<p><img src="bookdown-demo_files/figure-html/gr%C3%A1ficos%205-8-1.png" alt="" width="672" /></p>
-<div id="paquete-ggally" class="section level2 hasAnchor" number="5.1">
-<h2><span class="header-section-number">5.1</span> Paquete GGally<a href="bivariado.html#paquete-ggally" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="bivariado.html#cb48-1" tabindex="-1"></a> df <span class="sc">%&gt;%</span></span>
-<span id="cb48-2"><a href="bivariado.html#cb48-2" tabindex="-1"></a>  <span class="fu">ggpairs</span>()</span></code></pre></div>
+<p>Esta también podemos representarla en forma de gráfico de cajas y bigotes</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="bivariado.html#cb15-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb15-2"><a href="bivariado.html#cb15-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ocean_proximity, <span class="at">y=</span>median_house_value))<span class="sc">+</span></span>
+<span id="cb15-3"><a href="bivariado.html#cb15-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-2-1.png" width="672" />
+Este gráfico evidencia que las viviendas insulares (<code>ISLAND</code>) presentan la mediana de valor más elevada, seguidas por las ubicadas a menos de una hora del océano (<code>&lt;1H OCEAN</code>), cerca de la bahía (<code>NEAR BAY</code>) y cerca del océano (<code>NEAR OCEAN</code>), las cuales comparten rangos de precios similares. Por su parle, las viviendas continentales (<code>INLAND</code>) registran la mediana de valor más baja, aunque tienen numerosos valores atípicos</p>
+<p>Esto sugiere que, en general, las viviendas en islas son las más costosas; las viviendas continentales tienen los precios más accesibles, a pesar de haber numerosas excepciones; y las demás categorías tienen precios moderados y similares entre sí.</p>
+</div>
+<div id="resumen-1" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Resumen<a href="bivariado.html#resumen-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Aquí, utilizando el paquete Ggally, podemos ver un resumen de todos los anteriores anális bivariados:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="bivariado.html#cb16-1" tabindex="-1"></a> df <span class="sc">%&gt;%</span></span>
+<span id="cb16-2"><a href="bivariado.html#cb16-2" tabindex="-1"></a>  <span class="fu">ggpairs</span>()</span></code></pre></div>
 <pre><code>## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
@@ -313,7 +351,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.
 ## `stat_bin()` using `bins = 30`. Pick better value `binwidth`.</code></pre>
-<p><img src="bookdown-demo_files/figure-html/ggally-1.png" alt="" width="672" /></p>
+<p><img src="bookdown-demo_files/figure-html/ggally-1.png" width="672" /></p>
 
 </div>
 </div>
@@ -377,20 +415,6 @@ gitbook.start({
 });
 </script>
 
-<!-- dynamically load mathjax for compatibility with self-contained -->
-<script>
-  (function () {
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:")
-      if (/^https?:/.test(src))
-        src = src.replace(/^https?:/, '');
-    script.src = src;
-    document.getElementsByTagName("head")[0].appendChild(script);
-  })();
-</script>
 </body>
 
 </html>

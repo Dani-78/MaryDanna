@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo: 3 Análisis exploratorio univariado | Análisis exploratorio de datos de viviendas</title>
+  <meta name="description" content="Análisis exploratorio del conjunto de datos de viviendas." />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo: 3 Análisis exploratorio univariado | Análisis exploratorio de datos de viviendas" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Análisis exploratorio del conjunto de datos de viviendas." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo: 3 Análisis exploratorio univariado | Análisis exploratorio de datos de viviendas" />
+  
+  <meta name="twitter:description" content="Análisis exploratorio del conjunto de datos de viviendas." />
+  
+
+<meta name="author" content="Danna De la Hoz y Mary Silva" />
+
+
+<meta name="date" content="2026-08-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="preparacion.html"/>
+<link rel="next" href="bivariado.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#an%C3%A1lisis-exploratorio-de-datos-de-viviendas"><i class="fa fa-check"></i><b>0.1</b> Análisis exploratorio de datos de viviendas</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#contexto-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>1.1</b> Contexto del análisis</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#objetivo"><i class="fa fa-check"></i><b>1.2</b> Objetivo</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#descripci%C3%B3n-de-las-variables"><i class="fa fa-check"></i><b>1.3</b> Descripción de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preparacion.html"><a href="preparacion.html"><i class="fa fa-check"></i><b>2</b> Preparación de los datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="preparacion.html"><a href="preparacion.html#librer%C3%ADas-utilizadas"><i class="fa fa-check"></i><b>2.1</b> Librerías utilizadas</a></li>
+<li class="chapter" data-level="2.2" data-path="preparacion.html"><a href="preparacion.html#carga-del-conjunto-de-datos"><i class="fa fa-check"></i><b>2.2</b> Carga del conjunto de datos</a></li>
+<li class="chapter" data-level="2.3" data-path="preparacion.html"><a href="preparacion.html#tratamiento-de-valores-ausentes"><i class="fa fa-check"></i><b>2.3</b> Tratamiento de valores ausentes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="univariado.html"><a href="univariado.html"><i class="fa fa-check"></i><b>3</b> Análisis exploratorio univariado</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="univariado.html"><a href="univariado.html#variable-objetivo-valor-medio-de-las-viviendas"><i class="fa fa-check"></i><b>3.1</b> Variable Objetivo: Valor medio de las viviendas</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="univariado.html"><a href="univariado.html#medidas-estad%C3%ADsticas"><i class="fa fa-check"></i><b>3.1.1</b> Medidas estadísticas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="univariado.html"><a href="univariado.html#histograma"><i class="fa fa-check"></i><b>3.1.2</b> Histograma</a></li>
+<li class="chapter" data-level="3.1.3" data-path="univariado.html"><a href="univariado.html#diagrama-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>3.1.3</b> Diagrama de cajas y bigotes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="univariado.html"><a href="univariado.html#variables-num%C3%A9ricas"><i class="fa fa-check"></i><b>3.2</b> Variables Numéricas</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="univariado.html"><a href="univariado.html#poblaci%C3%B3n-hogares-e-ingresos"><i class="fa fa-check"></i><b>3.2.1</b> Población, Hogares e Ingresos</a></li>
+<li class="chapter" data-level="3.2.2" data-path="univariado.html"><a href="univariado.html#antiguedad-habitaciones-y-dormitorios"><i class="fa fa-check"></i><b>3.2.2</b> Antiguedad, Habitaciones y Dormitorios</a></li>
+<li class="chapter" data-level="3.2.3" data-path="univariado.html"><a href="univariado.html#coordenadas-geogr%C3%A1ficas"><i class="fa fa-check"></i><b>3.2.3</b> Coordenadas geográficas</a></li>
+<li class="chapter" data-level="3.2.4" data-path="univariado.html"><a href="univariado.html#resumen"><i class="fa fa-check"></i><b>3.2.4</b> Resumen</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="univariado.html"><a href="univariado.html#variables-categ%C3%B3ricas"><i class="fa fa-check"></i><b>3.3</b> Variables Categóricas</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="univariado.html"><a href="univariado.html#proximidad-al-oc%C3%A9ano"><i class="fa fa-check"></i><b>3.3.1</b> Proximidad al océano</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bivariado.html"><a href="bivariado.html"><i class="fa fa-check"></i><b>4</b> Análisis exploratorio bivariado</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bivariado.html"><a href="bivariado.html#paquete-ggally"><i class="fa fa-check"></i><b>4.1</b> Paquete GGally</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis exploratorio de datos de viviendas</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="univariado" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Capítulo: 3</span> Análisis exploratorio univariado<a href="univariado.html#univariado" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Con el análisis univariado se estudia cada variable de manera individual para conocer su distribución, valores centrales, valores atípicos y características como la dispersión y la asimetría</p>
+<div id="variable-objetivo-valor-medio-de-las-viviendas" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> Variable Objetivo: Valor medio de las viviendas<a href="univariado.html#variable-objetivo-valor-medio-de-las-viviendas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>En primer lugar, se analiza la variable objetivo <code>median_house_value</code>, la cual representa el valor medio de las viviendas en cada zona censal.</p>
+<div id="medidas-estadísticas" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> Medidas estadísticas<a href="univariado.html#medidas-estad%C3%ADsticas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Calculemos algunas medidas estadísticas para resumir su comportamiento.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="univariado.html#cb1-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> <span class="fu">summarise</span> (<span class="at">n =</span> <span class="fu">length</span>(median_house_value),</span>
+<span id="cb1-2"><a href="univariado.html#cb1-2" tabindex="-1"></a>                  <span class="at">media =</span> <span class="fu">mean</span>(median_house_value),</span>
+<span id="cb1-3"><a href="univariado.html#cb1-3" tabindex="-1"></a>                  <span class="at">sd =</span> <span class="fu">sd</span>(median_house_value),</span>
+<span id="cb1-4"><a href="univariado.html#cb1-4" tabindex="-1"></a>                  <span class="at">mediana =</span> <span class="fu">median</span>(median_house_value),</span>
+<span id="cb1-5"><a href="univariado.html#cb1-5" tabindex="-1"></a>                  <span class="at">RIC =</span> <span class="fu">IQR</span>(median_house_value),</span>
+<span id="cb1-6"><a href="univariado.html#cb1-6" tabindex="-1"></a>                  <span class="at">Q1 =</span> <span class="fu">quantile</span>(median_house_value,<span class="fl">0.25</span>),</span>
+<span id="cb1-7"><a href="univariado.html#cb1-7" tabindex="-1"></a>                  <span class="at">Q3 =</span> <span class="fu">quantile</span>(median_house_value,<span class="fl">0.75</span>),</span>
+<span id="cb1-8"><a href="univariado.html#cb1-8" tabindex="-1"></a>                  <span class="at">minimo =</span> <span class="fu">min</span>(median_house_value),</span>
+<span id="cb1-9"><a href="univariado.html#cb1-9" tabindex="-1"></a>                  <span class="at">maximo =</span> <span class="fu">max</span>(median_house_value),</span>
+<span id="cb1-10"><a href="univariado.html#cb1-10" tabindex="-1"></a>                  <span class="at">curtosis =</span> <span class="fu">kurtosis</span>(median_house_value),</span>
+<span id="cb1-11"><a href="univariado.html#cb1-11" tabindex="-1"></a>                  <span class="at">asimetria =</span> <span class="fu">skewness</span>(median_house_value))</span></code></pre></div>
+<pre><code>##       n    media       sd mediana    RIC     Q1     Q3 minimo maximo curtosis
+## 1 20640 206855.8 115395.6  179700 145125 119600 264725  14999 500001   3.3275
+##   asimetria
+## 1 0.9776922</code></pre>
+<p>El conjunto cuenta con 20.640 observaciones. El valor medio de las viviendas es de 206.856 USD, mientras que la mediana es de 179.700 USD. Esta diferencia, junto con una asimetría de 0,98, indica que la distribución presenta un sesgo hacia valores altos. El 50 % central de las viviendas se encuentra entre 119.600 y 264.725 USD, mostrando una dispersión considerable. Además, los valores van desde 14.999 hasta 500.001 USD.</p>
+<p>En general, median_house_value presenta alta variabilidad y una distribución moderadamente sesgada hacia la derecha.</p>
+</div>
+<div id="histograma" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> Histograma<a href="univariado.html#histograma" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Ahora, para observar directamente la distribución, se utiliza un histograma acompañado de una curva de densidad.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="univariado.html#cb3-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="univariado.html#cb3-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> median_house_value)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="univariado.html#cb3-3" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)), </span>
+<span id="cb3-4"><a href="univariado.html#cb3-4" tabindex="-1"></a>                 <span class="at">binwidth =</span> <span class="dv">25000</span>, </span>
+<span id="cb3-5"><a href="univariado.html#cb3-5" tabindex="-1"></a>                 <span class="at">fill =</span> <span class="st">&quot;#F598C4&quot;</span>, </span>
+<span id="cb3-6"><a href="univariado.html#cb3-6" tabindex="-1"></a>                 <span class="at">color =</span> <span class="st">&quot;white&quot;</span>, </span>
+<span id="cb3-7"><a href="univariado.html#cb3-7" tabindex="-1"></a>                 <span class="at">alpha =</span> <span class="fl">0.6</span>) <span class="sc">+</span></span>
+<span id="cb3-8"><a href="univariado.html#cb3-8" tabindex="-1"></a>  <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">&quot;#3D9970&quot;</span>, <span class="at">linewidth =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="univariado.html#cb3-9" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb3-10"><a href="univariado.html#cb3-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Distribucion del valor medio de las viviendas&quot;</span>,</span>
+<span id="cb3-11"><a href="univariado.html#cb3-11" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Valor medio de la vivienda (USD)&quot;</span>,</span>
+<span id="cb3-12"><a href="univariado.html#cb3-12" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Densidad&quot;</span></span>
+<span id="cb3-13"><a href="univariado.html#cb3-13" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb3-14"><a href="univariado.html#cb3-14" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/histhousevalue-1.png" width="672" />
+Se observa que la distribución se concentra principalmente entre 100.000 y 250.000 USD, con un pico alrededor de 150.000–175.000 USD. A partir de este rango, la frecuencia disminuye progresivamente,lo que indica asimetría positiva. También se observa una concentración importante de valores cerca de 500.000 USD, relacionada con el límite superior de los datos.</p>
+<p>El histograma confirma que los valores de las viviendas presentan una distribución asimétrica y una variabilidad considerable.</p>
+</div>
+<div id="diagrama-de-cajas-y-bigotes" class="section level3 hasAnchor" number="3.1.3">
+<h3><span class="header-section-number">3.1.3</span> Diagrama de cajas y bigotes<a href="univariado.html#diagrama-de-cajas-y-bigotes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para complementar el histograma, se utiliza un diagrama de cajas y bigotes. Este permite visualizar la mediana, los cuartiles y los posibles valores atípicos.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="univariado.html#cb4-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="univariado.html#cb4-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> median_house_value)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="univariado.html#cb4-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;lightblue&quot;</span>, <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>, <span class="at">outlier.color =</span> <span class="st">&quot;darkred&quot;</span>) <span class="sc">+</span></span>
+<span id="cb4-4"><a href="univariado.html#cb4-4" tabindex="-1"></a>  <span class="fu">stat_summary</span>(</span>
+<span id="cb4-5"><a href="univariado.html#cb4-5" tabindex="-1"></a>    <span class="at">fun =</span> mean,</span>
+<span id="cb4-6"><a href="univariado.html#cb4-6" tabindex="-1"></a>    <span class="at">geom =</span> <span class="st">&quot;point&quot;</span>,</span>
+<span id="cb4-7"><a href="univariado.html#cb4-7" tabindex="-1"></a>    <span class="at">shape =</span> <span class="dv">20</span>,</span>
+<span id="cb4-8"><a href="univariado.html#cb4-8" tabindex="-1"></a>    <span class="at">size =</span> <span class="dv">3</span>,</span>
+<span id="cb4-9"><a href="univariado.html#cb4-9" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">&quot;black&quot;</span></span>
+<span id="cb4-10"><a href="univariado.html#cb4-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="univariado.html#cb4-11" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb4-12"><a href="univariado.html#cb4-12" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Diagrama de cajas y bigotes del valor medio de las viviendas&quot;</span>,</span>
+<span id="cb4-13"><a href="univariado.html#cb4-13" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span>,</span>
+<span id="cb4-14"><a href="univariado.html#cb4-14" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Valor medio de la vivienda (USD)&quot;</span></span>
+<span id="cb4-15"><a href="univariado.html#cb4-15" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="univariado.html#cb4-16" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/boxplotvaluehouse-1.png" width="672" />
+El diagrama muestra que la mediana del valor de las viviendas se encuentra alrededor de 179.700 USD, mientras que el 50 % central de los datos se concentra aproximadamente entre 119.600 y 264.725 USD.</p>
+<p>Se observan varios valores atípicos en la parte superior, cercanos a los 500.000 USD de viviendas con valores considerablemente mayores al resto. Además, la posición de la media por encima de la mediana se explica por la asimetría positiva. Es decir, hay alta dispersión y sesgo hacia valores altos.</p>
+</div>
+</div>
+<div id="variables-numéricas" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Variables Numéricas<a href="univariado.html#variables-num%C3%A9ricas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ya estudiada la variable objetivo, se analiza individualmente cada una de las demás variables del conjunto de datos antes de analizar las relaciones entre ellas. Empezemos con las variables numéricas.</p>
+<div id="población-hogares-e-ingresos" class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Población, Hogares e Ingresos<a href="univariado.html#poblaci%C3%B3n-hogares-e-ingresos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para conocer algunas características demográficas y socioeconómicas, se analizan las variables <code>population</code> , <code>households</code> y <code>median_income</code>. La variable <code>population</code> representa la cantidad de personas que habitan en cada zona, <code>households</code> indica el número de hogares registrados y <code>median_income</code> corresponde al ingreso medio de los hogares.</p>
+<p>Representémoslas por medio de diagramas de cajas y bigotes:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="univariado.html#cb5-1" tabindex="-1"></a>G_population <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="univariado.html#cb5-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> population))<span class="sc">+</span></span>
+<span id="cb5-3"><a href="univariado.html#cb5-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb5-4"><a href="univariado.html#cb5-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Poblacion&quot;</span>)<span class="sc">+</span></span>
+<span id="cb5-5"><a href="univariado.html#cb5-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="univariado.html#cb6-1" tabindex="-1"></a>G_households <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb6-2"><a href="univariado.html#cb6-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> households)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="univariado.html#cb6-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;brown&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="univariado.html#cb6-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Numero de hogares de la zona&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="univariado.html#cb7-1" tabindex="-1"></a>G_income <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb7-2"><a href="univariado.html#cb7-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> median_income)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="univariado.html#cb7-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;green&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="univariado.html#cb7-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Ingreso medio de los hogares (decenas de miles de USD)&quot;</span>)</span>
+<span id="cb7-5"><a href="univariado.html#cb7-5" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="univariado.html#cb7-6" tabindex="-1"></a>G_population <span class="sc">+</span> G_households <span class="sc">+</span> G_income</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>En las variables <code>population</code> y <code>households</code> se observa una alta concentración de valores bajos y medios, así como numerosos valores atípicos en la parte superior. Por su parte, <code>median_income</code> presenta una distribución más concentrada, pero también se observan varios valores atípicos superiores.</p>
+<p>En general, los tres diagramas muestran asimetría positiva debido a los datos atípicos. Es decir, la mayoría de las zonas presentan una población, número de hogares e ingresos moderados, pero algunas alcanzan valores considerablemente mayores.</p>
+</div>
+<div id="antiguedad-habitaciones-y-dormitorios" class="section level3 hasAnchor" number="3.2.2">
+<h3><span class="header-section-number">3.2.2</span> Antiguedad, Habitaciones y Dormitorios<a href="univariado.html#antiguedad-habitaciones-y-dormitorios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Para complementar, se analizan las variables <code>housing_median_age</code>, <code>total_rooms</code> y <code>total_bedrooms</code>. Estas representan la antigüedad de las viviendad, el número de habitaciones y el número de dormitorios respectivamente. Lo que caracterizar las viviendas según sus condiciones y su tamaño.</p>
+<p>A continuación, los diagramas de caja y bigotes:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="univariado.html#cb8-1" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb8-2"><a href="univariado.html#cb8-2" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="univariado.html#cb8-3" tabindex="-1"></a><span class="co"># Boxplot de housing_median_age</span></span>
+<span id="cb8-4"><a href="univariado.html#cb8-4" tabindex="-1"></a>p1 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb8-5"><a href="univariado.html#cb8-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> housing_median_age)) <span class="sc">+</span></span>
+<span id="cb8-6"><a href="univariado.html#cb8-6" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;#1f77b4&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb8-7"><a href="univariado.html#cb8-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-8"><a href="univariado.html#cb8-8" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Antigüedad media de las viviendas&quot;</span>,</span>
+<span id="cb8-9"><a href="univariado.html#cb8-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Años&quot;</span>,</span>
+<span id="cb8-10"><a href="univariado.html#cb8-10" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-11"><a href="univariado.html#cb8-11" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-12"><a href="univariado.html#cb8-12" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb8-13"><a href="univariado.html#cb8-13" tabindex="-1"></a></span>
+<span id="cb8-14"><a href="univariado.html#cb8-14" tabindex="-1"></a><span class="co"># Boxplot de total_rooms</span></span>
+<span id="cb8-15"><a href="univariado.html#cb8-15" tabindex="-1"></a>p2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb8-16"><a href="univariado.html#cb8-16" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> total_rooms)) <span class="sc">+</span></span>
+<span id="cb8-17"><a href="univariado.html#cb8-17" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;#2ca02c&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb8-18"><a href="univariado.html#cb8-18" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-19"><a href="univariado.html#cb8-19" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Número total de habitaciones&quot;</span>,</span>
+<span id="cb8-20"><a href="univariado.html#cb8-20" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Habitaciones&quot;</span>,</span>
+<span id="cb8-21"><a href="univariado.html#cb8-21" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-22"><a href="univariado.html#cb8-22" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-23"><a href="univariado.html#cb8-23" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb8-24"><a href="univariado.html#cb8-24" tabindex="-1"></a></span>
+<span id="cb8-25"><a href="univariado.html#cb8-25" tabindex="-1"></a><span class="co"># Boxplot de total_bedrooms</span></span>
+<span id="cb8-26"><a href="univariado.html#cb8-26" tabindex="-1"></a>p3 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb8-27"><a href="univariado.html#cb8-27" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>, <span class="at">y =</span> total_bedrooms)) <span class="sc">+</span></span>
+<span id="cb8-28"><a href="univariado.html#cb8-28" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">&quot;#d62728&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb8-29"><a href="univariado.html#cb8-29" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb8-30"><a href="univariado.html#cb8-30" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Número total de dormitorios&quot;</span>,</span>
+<span id="cb8-31"><a href="univariado.html#cb8-31" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Dormitorios&quot;</span>,</span>
+<span id="cb8-32"><a href="univariado.html#cb8-32" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb8-33"><a href="univariado.html#cb8-33" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-34"><a href="univariado.html#cb8-34" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span>
+<span id="cb8-35"><a href="univariado.html#cb8-35" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="univariado.html#cb8-36" tabindex="-1"></a><span class="co"># Primera fila</span></span>
+<span id="cb8-37"><a href="univariado.html#cb8-37" tabindex="-1"></a>p1 <span class="sc">+</span> p2 <span class="sc">+</span> p3 </span></code></pre></div>
+<pre><code>## Warning: Removed 207 rows containing non-finite outside the scale range
+## (`stat_boxplot()`).</code></pre>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>La variable <code>housing_median_age</code> presenta una distribución más equilibrada que las variables relacionadas con el número de habitaciones. La mayor parte de las zonas tiene una antigüedad media entre 18 y 37 años, con una mediana cercana a los 29 años, sin datos particularmente atípicos.</p>
+<p>Por otro lado, tanto <code>total_rooms</code> como <code>total_bedrooms</code> presentan una marcada asimetría positiva. La mayoría de las observaciones se concentra en valores relativamente bajos, mientras que existen muchos valores atípicos superiores. Esto indica que algunas zonas cuentan con una cantidad de habitaciones considerablemente mayor que la mayoría.</p>
+<p>También se observa que las dos variables tienen un comportamiento similar, lo que sugiere una relación, ya que las viviendas con un mayor número total de habitaciones suelen tener también más dormitorios.</p>
+</div>
+<div id="coordenadas-geográficas" class="section level3 hasAnchor" number="3.2.3">
+<h3><span class="header-section-number">3.2.3</span> Coordenadas geográficas<a href="univariado.html#coordenadas-geogr%C3%A1ficas" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Las variables <code>latitude</code> y <code>longitude</code> permiten identificar la ubicación geográfica de cada zona del conjunto de datos. Esta ubicación puede estar relacionada con otras condiciones de la zona y, posteriormente, con el valor de las viviendas.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="univariado.html#cb10-1" tabindex="-1"></a>G_long <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb10-2"><a href="univariado.html#cb10-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>longitude))<span class="sc">+</span></span>
+<span id="cb10-3"><a href="univariado.html#cb10-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;orange&quot;</span>, <span class="at">alpha=</span><span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb10-4"><a href="univariado.html#cb10-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span><span class="st">&quot;Longitud geografica&quot;</span>)</span>
+<span id="cb10-5"><a href="univariado.html#cb10-5" tabindex="-1"></a>  </span>
+<span id="cb10-6"><a href="univariado.html#cb10-6" tabindex="-1"></a> G_lat <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb10-7"><a href="univariado.html#cb10-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span>latitude))<span class="sc">+</span></span>
+<span id="cb10-8"><a href="univariado.html#cb10-8" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill=</span><span class="st">&quot;purple&quot;</span>, <span class="at">alpha=</span><span class="fl">0.7</span>)<span class="sc">+</span></span>
+<span id="cb10-9"><a href="univariado.html#cb10-9" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&quot;&quot;</span>, <span class="at">y=</span><span class="st">&quot;Latitud geografica&quot;</span>)</span>
+<span id="cb10-10"><a href="univariado.html#cb10-10" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="univariado.html#cb10-11" tabindex="-1"></a> G_long <span class="sc">+</span> G_lat</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/long&lat-1.png" width="672" />
+Los diagramas de cajas permiten observar el rango y la concentración de los valores de latitud y longitud. Aunque a diferencia de otras variables del conjunto, como las coordenadas representan posiciones geográficas, sus valores deben interpretarse como ubicaciones y no como cantidades que puedan considerarse altas o bajas.</p>
+<p>Ambas variables muestran una dispersión similar con asimetrías opuestas. La longitud es asimétrica negativamente (hacia el este) y la latitud lo es positivamente (hacia el sur), lo que sugiere que las viviendas se concentran en el sureste de California.</p>
+</div>
+<div id="resumen" class="section level3 hasAnchor" number="3.2.4">
+<h3><span class="header-section-number">3.2.4</span> Resumen<a href="univariado.html#resumen" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="univariado.html#cb11-1" tabindex="-1"></a>resumen_numericas <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="univariado.html#cb11-2" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric), <span class="sc">-</span>median_house_value) <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="univariado.html#cb11-3" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(</span>
+<span id="cb11-4"><a href="univariado.html#cb11-4" tabindex="-1"></a>    <span class="at">cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb11-5"><a href="univariado.html#cb11-5" tabindex="-1"></a>    <span class="at">names_to =</span> <span class="st">&quot;variable&quot;</span>,</span>
+<span id="cb11-6"><a href="univariado.html#cb11-6" tabindex="-1"></a>    <span class="at">values_to =</span> <span class="st">&quot;valor&quot;</span></span>
+<span id="cb11-7"><a href="univariado.html#cb11-7" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="univariado.html#cb11-8" tabindex="-1"></a>  <span class="fu">group_by</span>(variable) <span class="sc">%&gt;%</span></span>
+<span id="cb11-9"><a href="univariado.html#cb11-9" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb11-10"><a href="univariado.html#cb11-10" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(valor)),</span>
+<span id="cb11-11"><a href="univariado.html#cb11-11" tabindex="-1"></a>    <span class="at">media =</span> <span class="fu">mean</span>(valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-12"><a href="univariado.html#cb11-12" tabindex="-1"></a>    <span class="at">ds =</span> <span class="fu">sd</span>(valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-13"><a href="univariado.html#cb11-13" tabindex="-1"></a>    <span class="at">mediana =</span> <span class="fu">median</span>(valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-14"><a href="univariado.html#cb11-14" tabindex="-1"></a>    <span class="at">minimo =</span> <span class="fu">min</span>(valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-15"><a href="univariado.html#cb11-15" tabindex="-1"></a>    <span class="at">maximo =</span> <span class="fu">max</span>(valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-16"><a href="univariado.html#cb11-16" tabindex="-1"></a>    <span class="at">Q1 =</span> <span class="fu">quantile</span>(valor, <span class="fl">0.25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-17"><a href="univariado.html#cb11-17" tabindex="-1"></a>    <span class="at">Q3 =</span> <span class="fu">quantile</span>(valor, <span class="fl">0.75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-18"><a href="univariado.html#cb11-18" tabindex="-1"></a>    <span class="at">IQR =</span> <span class="fu">IQR</span>(valor, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb11-19"><a href="univariado.html#cb11-19" tabindex="-1"></a>    <span class="at">.groups =</span> <span class="st">&quot;drop&quot;</span></span>
+<span id="cb11-20"><a href="univariado.html#cb11-20" tabindex="-1"></a>  )</span>
+<span id="cb11-21"><a href="univariado.html#cb11-21" tabindex="-1"></a></span>
+<span id="cb11-22"><a href="univariado.html#cb11-22" tabindex="-1"></a>resumen_numericas</span></code></pre></div>
+<pre><code>## # A tibble: 8 × 10
+##   variable      n   media     ds mediana   minimo  maximo      Q1      Q3    IQR
+##   &lt;chr&gt;     &lt;int&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;
+## 1 househol… 20640  500.   3.82e2  409       1      6082    280     605    3.25e2
+## 2 housing_… 20640   28.6  1.26e1   29       1        52     18      37    1.9 e1
+## 3 latitude  20640   35.6  2.14e0   34.3    32.5      42.0   33.9    37.7  3.78e0
+## 4 longitude 20640 -120.   2.00e0 -118.   -124.     -114.  -122.   -118.   3.79e0
+## 5 median_i… 20640    3.87 1.90e0    3.53    0.500    15.0    2.56    4.74 2.18e0
+## 6 populati… 20640 1425.   1.13e3 1166       3     35682    787    1725    9.38e2
+## 7 total_be… 20433  538.   4.21e2  435       1      6445    296     647    3.51e2
+## 8 total_ro… 20640 2636.   2.18e3 2127       2     39320   1448.   3148    1.70e3</code></pre>
+</div>
+</div>
+<div id="variables-categóricas" class="section level2 hasAnchor" number="3.3">
+<h2><span class="header-section-number">3.3</span> Variables Categóricas<a href="univariado.html#variables-categ%C3%B3ricas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Ya que analizamos las variables numéricas, continuemos con las categóricas.</p>
+<div id="proximidad-al-océano" class="section level3 hasAnchor" number="3.3.1">
+<h3><span class="header-section-number">3.3.1</span> Proximidad al océano<a href="univariado.html#proximidad-al-oc%C3%A9ano" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>En este caso la única variable categórica es <code>ocean_proximity</code>, la cual clasifica las zonas censadas según su proximidad al océano en:</p>
+<ul>
+<li>A menos de una hora del océano</li>
+<li>Interior / Zona continental</li>
+<li>En una isla</li>
+<li>Cerca de la bahía</li>
+<li>Cerca del océano</li>
+</ul>
+<p>Veamos una tabla de frecuencias:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="univariado.html#cb13-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="univariado.html#cb13-2" tabindex="-1"></a>  <span class="fu">count</span>(ocean_proximity, <span class="at">name =</span> <span class="st">&quot;n&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="univariado.html#cb13-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Porcentaje =</span> <span class="fu">round</span>((n<span class="sc">/</span><span class="fu">sum</span>(n))<span class="sc">*</span><span class="dv">100</span>,<span class="dv">2</span>),</span>
+<span id="cb13-4"><a href="univariado.html#cb13-4" tabindex="-1"></a>         <span class="at">Variable =</span> <span class="st">&#39;ocean_proximity&#39;</span>,</span>
+<span id="cb13-5"><a href="univariado.html#cb13-5" tabindex="-1"></a>         <span class="at">Categoria =</span> <span class="fu">as.character</span>(ocean_proximity)) <span class="sc">%&gt;%</span> <span class="fu">select</span>(Variable,Categoria,n,Porcentaje) <span class="ot">-&gt;</span> tabla_ocean</span>
+<span id="cb13-6"><a href="univariado.html#cb13-6" tabindex="-1"></a></span>
+<span id="cb13-7"><a href="univariado.html#cb13-7" tabindex="-1"></a>tabla_ocean</span></code></pre></div>
+<pre><code>##          Variable  Categoria    n Porcentaje
+## 1 ocean_proximity  &lt;1H OCEAN 9136      44.26
+## 2 ocean_proximity     INLAND 6551      31.74
+## 3 ocean_proximity     ISLAND    5       0.02
+## 4 ocean_proximity   NEAR BAY 2290      11.09
+## 5 ocean_proximity NEAR OCEAN 2658      12.88</code></pre>
+<p>Asimismo, representamos en un gráfico de barras:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="univariado.html#cb15-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb15-2"><a href="univariado.html#cb15-2" tabindex="-1"></a>    <span class="fu">count</span>(ocean_proximity, <span class="at">name =</span> <span class="st">&quot;Frecuencia&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="univariado.html#cb15-3" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb15-4"><a href="univariado.html#cb15-4" tabindex="-1"></a>    <span class="at">Porcentaje =</span> <span class="fu">round</span>(Frecuencia <span class="sc">/</span> <span class="fu">sum</span>(Frecuencia) <span class="sc">*</span> <span class="dv">100</span>, <span class="dv">1</span>),</span>
+<span id="cb15-5"><a href="univariado.html#cb15-5" tabindex="-1"></a>    <span class="at">Etiqueta =</span> <span class="fu">paste0</span>(Frecuencia, <span class="st">&quot; (&quot;</span>, Porcentaje, <span class="st">&quot;%)&quot;</span>)) <span class="ot">-&gt;</span> tabla_ocean_b</span>
+<span id="cb15-6"><a href="univariado.html#cb15-6" tabindex="-1"></a>tabla_ocean_b <span class="sc">%&gt;%</span></span>
+<span id="cb15-7"><a href="univariado.html#cb15-7" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(ocean_proximity, <span class="sc">-</span>Frecuencia), <span class="at">y =</span> Frecuencia))<span class="sc">+</span></span>
+<span id="cb15-8"><a href="univariado.html#cb15-8" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">&quot;#008B8B&quot;</span>, <span class="at">width =</span> <span class="fl">0.6</span>)<span class="sc">+</span></span>
+<span id="cb15-9"><a href="univariado.html#cb15-9" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> Etiqueta), <span class="at">vjust=</span><span class="sc">-</span><span class="fl">0.5</span>, <span class="at">size=</span><span class="fl">4.5</span>)<span class="sc">+</span></span>
+<span id="cb15-10"><a href="univariado.html#cb15-10" tabindex="-1"></a>   <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;Proximidad al oceano&quot;</span>, <span class="at">y =</span> <span class="st">&quot;Frecuencia (Porcentaje)&quot;</span>) <span class="sc">+</span></span>
+<span id="cb15-11"><a href="univariado.html#cb15-11" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span><span class="st">&#39;Distribucion de la variable ocean proximity&#39;</span>)<span class="sc">+</span></span>
+<span id="cb15-12"><a href="univariado.html#cb15-12" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">expand =</span> <span class="fu">expansion</span>(<span class="at">mult=</span><span class="fu">c</span>(<span class="dv">0</span>,<span class="fl">0.15</span>)))<span class="sc">+</span></span>
+<span id="cb15-13"><a href="univariado.html#cb15-13" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/oceangrafico-1.png" width="672" /></p>
+<p>En las anteriores representaciones se logra ver que la variable <code>ocean_proximity</code> muestra una clara concentración en dos categorías principales que abarcan más del 76% de la muestra: las viviendas ubicadas a menos de una hora del océano (44.26%) y las situadas en el interior o zona continental).</p>
+<p>Por su parte, las categorías cerca al océano y cerca a la bahía registran proporciones moderadas y bastante parecidas entre sí, entre el 11% y el 13%. Finalmente, la categoría de viviendas en islas resulta estadísticamente insignificante, representando apenas el 0.02% de las viviendas.</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="preparacion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="bivariado.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>

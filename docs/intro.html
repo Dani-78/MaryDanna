@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introducción | Análisis exploratorio de datos de viviendas</title>
+  <meta name="description" content="Análisis exploratorio del conjunto de datos de viviendas." />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introducción | Análisis exploratorio de datos de viviendas" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Análisis exploratorio del conjunto de datos de viviendas." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introducción | Análisis exploratorio de datos de viviendas" />
+  
+  <meta name="twitter:description" content="Análisis exploratorio del conjunto de datos de viviendas." />
+  
+
+<meta name="author" content="Danna De la Hoz y Mary Silva" />
+
+
+<meta name="date" content="2026-08-17" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="preparacion.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Presentación</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="index.html"><a href="index.html#an%C3%A1lisis-exploratorio-de-datos-de-viviendas"><i class="fa fa-check"></i><b>0.1</b> Análisis exploratorio de datos de viviendas</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introducción</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#contexto-del-an%C3%A1lisis"><i class="fa fa-check"></i><b>1.1</b> Contexto del análisis</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#objetivo"><i class="fa fa-check"></i><b>1.2</b> Objetivo</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#descripci%C3%B3n-de-las-variables"><i class="fa fa-check"></i><b>1.3</b> Descripción de las variables</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="preparacion.html"><a href="preparacion.html"><i class="fa fa-check"></i><b>2</b> Preparación de los datos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="preparacion.html"><a href="preparacion.html#librer%C3%ADas-utilizadas"><i class="fa fa-check"></i><b>2.1</b> Librerías utilizadas</a></li>
+<li class="chapter" data-level="2.2" data-path="preparacion.html"><a href="preparacion.html#carga-del-conjunto-de-datos"><i class="fa fa-check"></i><b>2.2</b> Carga del conjunto de datos</a></li>
+<li class="chapter" data-level="2.3" data-path="preparacion.html"><a href="preparacion.html#tratamiento-de-valores-ausentes"><i class="fa fa-check"></i><b>2.3</b> Tratamiento de valores ausentes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="univariado.html"><a href="univariado.html"><i class="fa fa-check"></i><b>3</b> Análisis exploratorio univariado</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="univariado.html"><a href="univariado.html#valor-medio-de-las-viviendas"><i class="fa fa-check"></i><b>3.1</b> Valor medio de las viviendas</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="univariado.html"><a href="univariado.html#medidas-estad%C3%ADsticas"><i class="fa fa-check"></i><b>3.1.1</b> Medidas estadísticas</a></li>
+<li class="chapter" data-level="3.1.2" data-path="univariado.html"><a href="univariado.html#histograma"><i class="fa fa-check"></i><b>3.1.2</b> Histograma</a></li>
+<li class="chapter" data-level="3.1.3" data-path="univariado.html"><a href="univariado.html#diagrama-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>3.1.3</b> Diagrama de cajas y bigotes</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="univariado.html"><a href="univariado.html#proximidad-al-oc%C3%A9ano"><i class="fa fa-check"></i><b>3.2</b> Proximidad al océano</a></li>
+<li class="chapter" data-level="3.3" data-path="univariado.html"><a href="univariado.html#antiguedad-de-la-vivienda"><i class="fa fa-check"></i><b>3.3</b> Antiguedad de la vivienda</a></li>
+<li class="chapter" data-level="3.4" data-path="univariado.html"><a href="univariado.html#poblaci%C3%B3n"><i class="fa fa-check"></i><b>3.4</b> Población</a></li>
+<li class="chapter" data-level="3.5" data-path="univariado.html"><a href="univariado.html#hogares"><i class="fa fa-check"></i><b>3.5</b> Hogares</a></li>
+<li class="chapter" data-level="3.6" data-path="univariado.html"><a href="univariado.html#ingresos"><i class="fa fa-check"></i><b>3.6</b> Ingresos</a></li>
+<li class="chapter" data-level="3.7" data-path="univariado.html"><a href="univariado.html#coordenadas-geogr%C3%A1ficas"><i class="fa fa-check"></i><b>3.7</b> Coordenadas geográficas</a></li>
+<li class="chapter" data-level="3.8" data-path="univariado.html"><a href="univariado.html#resumen-de-las-variables-num%C3%A9ricas"><i class="fa fa-check"></i><b>3.8</b> Resumen de las variables numéricas</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="bivariado.html"><a href="bivariado.html"><i class="fa fa-check"></i><b>4</b> Análisis exploratorio bivariado</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="bivariado.html"><a href="bivariado.html#paquete-ggally"><i class="fa fa-check"></i><b>4.1</b> Paquete GGally</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Análisis exploratorio de datos de viviendas</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introducción<a href="intro.html#intro" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="contexto-del-análisis" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> Contexto del análisis<a href="intro.html#contexto-del-an%C3%A1lisis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El valor de una vivienda no depende de una única característica. Factores como la ubicación, el nivel de ingresos de la población, la antigüedad de las viviendas y las características de cada zona pueden estar relacionadas con las diferencias observadas en los precios.</p>
+<p>Para estudiar estas relaciones utilizaremos el conjunto de datos <strong>California Housing</strong>, que reúne información de distintas viviendas del estado de California. Cada observación representa una zona y contiene variables que permiten describir tanto sus características demográficas como algunas condiciones económicas y geográficas.</p>
+</div>
+<div id="objetivo" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Objetivo<a href="intro.html#objetivo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El propósito de este trabajo es realizar un <strong>análisis exploratorio de los datos (EDA)</strong> que permita conocer las principales características del conjunto de datos y explorar posibles relaciones entre sus variables, especialmente su relación con la variable de interés <code>median_house_value</code>, que corresponde al valor medio de las viviendas de cada zona.</p>
+<p>En particular, se busca:</p>
+<ul>
+<li>Describir estadísticamente las variables disponibles</li>
+<li>Examinar la distribución del valor medio de las viviendas;</li>
+<li>Identificar la presencia de valores ausentes y realizar un tratamiento de estos;</li>
+<li>Analizar la distribución de las viviendas según su proximidad al océano;</li>
+<li>Explorar la relación entre <code>median_house_value</code> y diferentes variables numéricas y categóricas;</li>
+<li>Identificar patrones, tendencias y posibles valores atípicos que puedan ser relevantes para un análisis posterior.</li>
+</ul>
+<p>De esta manera, el análisis exploratorio permite obtener una primera visión del comportamiento de los datos y establecer una base para posibles análisis estadísticos o modelos de regresión posteriores.</p>
+</div>
+<div id="descripción-de-las-variables" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Descripción de las variables<a href="intro.html#descripci%C3%B3n-de-las-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>El conjunto de datos contiene diez variables:</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>longitude</code></td>
+<td align="left">Longitud geográfica de la zona.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>latitude</code></td>
+<td align="left">Latitud geográfica de la zona.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>housing_median_age</code></td>
+<td align="left">Edad media de las viviendas de la zona.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>total_rooms</code></td>
+<td align="left">Número total de habitaciones registradas en la zona.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>total_bedrooms</code></td>
+<td align="left">Número total de dormitorios registrados en la zona.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>population</code></td>
+<td align="left">Población total de la zona.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>households</code></td>
+<td align="left">Número de hogares de la zona.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>median_income</code></td>
+<td align="left">Ingreso medio de los hogares, expresado en decenas de miles de dólares.</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>median_house_value</code></td>
+<td align="left">Valor medio de las viviendas, expresado en dólares.</td>
+</tr>
+<tr class="even">
+<td align="left"><code>ocean_proximity</code></td>
+<td align="left">Categoría que describe la proximidad de la zona al océano.</td>
+</tr>
+</tbody>
+</table>
+<p>La variable <code>median_house_value</code> será tomada como <strong>variable objetivo</strong>, mientras que las demás variables se utilizarán para describir el conjunto de datos y explorar posibles relaciones con el valor de las viviendas.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="preparacion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+</body>
+
+</html>
